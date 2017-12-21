@@ -1,0 +1,19 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Adiciona os fragmentos criado na telaConfiguraçoes, sendo eles botoes. -->
+    <header
+        android:fragment="com.example.joaovitor.divulgadoreventos.Interfaces.telaConfiguracoes$GeneralPreferenceFragment"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="@string/pref_header_general" />
+
+    <header
+        android:fragment="com.example.joaovitor.divulgadoreventos.Interfaces.telaConfiguracoes$FragmentoDesign"
+        android:icon="@drawable/ic_compare_black_24dp"
+        android:title="@string/pref_Design" />
+
+    <header
+        android:fragment="com.example.joaovitor.divulgadoreventos.Interfaces.telaConfiguracoes$FragmentoSincronizacao"
+        android:icon="@drawable/ic_sync_black_24dp"
+        android:title="@string/pref_Intervalo" />
+
+</preference-headers>
