@@ -15,8 +15,13 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.Map;
 
 
 public class telaMaps extends FragmentActivity implements OnMapReadyCallback {
@@ -24,53 +29,30 @@ public class telaMaps extends FragmentActivity implements OnMapReadyCallback {
     // Valor booleano nulo para verificar a permissão.
     private boolean PermissaoLocalizacao;
     private GoogleMap mMap;
+    private Circle Circulo;
+    private CircleOptions circleOptions;
 
-    //abre o mapa com um marcador no sesc.
-    private void PositionSesc() {
-        LatLng SescSjc = new LatLng(-23.200979, -45.892457);
-        mMap.addMarker(new MarkerOptions().position(SescSjc).title("Sesc"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(SescSjc));
-        //zoom no sesc
-        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(SescSjc, 18);
-        mMap.moveCamera(update);
-        //tipo de mapa
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        VerificaPermissao();
-        UpdatePermissao();
-    }
-
-    private void PositionSesi() {
-        LatLng SesiSjc = new LatLng(-23.248826, -45.884914);
-        mMap.addMarker(new MarkerOptions().position(SesiSjc).title("Teatro Sesi"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(SesiSjc));
-        //zoom no Teatro sesi
-        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(SesiSjc, 18);
-        mMap.moveCamera(update);
-        //tipo de mapa
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        //Verificar e ativar a permissão do usuário
-        VerificaPermissao();
-        UpdatePermissao();
-    }
-
-    private void PositionSjc() {
-        // Adiciona a marca
-        LatLng Sjk = new LatLng(-23.215932, -45.895167);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(Sjk));
-        //zoom no sesc
-        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(Sjk, 15);
-        mMap.moveCamera(update);
+    //Configurações gerais do mapa
+    private void MapConfig() {
         //tipo de mapa
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         //controle de zoom
         mMap.getUiSettings().setZoomControlsEnabled(true);
+        //Controle de preferencias de zoom: Minimo e máximo
+        mMap.setMinZoomPreference(13);
+        mMap.setMaxZoomPreference(20);
+        //Libera todas os gestos de mapa do app. (Inclinação, rotação, rolagem, zoom.
+        mMap.getUiSettings().setAllGesturesEnabled(true);
+        /* Controle de direção (Bússola), apenas quando o usuário estiver com uma rota traçada
+        e olhando para outro lado do mapa */
+        mMap.getUiSettings().setCompassEnabled(true);
         //Verificar e ativar a permissão do usuário
         VerificaPermissao();
         UpdatePermissao();
     }
 
-    //Função responsável para verificar a permissão, caso não esteja ativa ele requisita a
-    // autorização do usuário
+    /* Função responsável para verificar a permissão, caso não esteja ativa ele requisita a
+     autorização do usuário */
     private void VerificaPermissao() {
         //Verifica se a permissao esta ativa.
         if (ContextCompat.checkSelfPermission(this.getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
@@ -81,8 +63,8 @@ public class telaMaps extends FragmentActivity implements OnMapReadyCallback {
         }
     }
 
-    //função que verifica a permissão de mapa ativa no aplicativo,
-    //responsavel para abrir a localização atual.
+    /* Função que verifica a permissão de mapa ativa no aplicativo, responsavel para abrir a
+     localização atual do usuário */
     private void UpdatePermissao() {
         if (mMap == null) {
             return;
@@ -103,9 +85,51 @@ public class telaMaps extends FragmentActivity implements OnMapReadyCallback {
         }
     }
 
+    //abre o mapa com um marcador no sesc.
+    private void PositionSesc() {
+        LatLng SescSjc = new LatLng(-23.200979, -45.892457);
+        mMap.addMarker(new MarkerOptions().position(SescSjc).title("Sesc São José dos Campos"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(SescSjc));
+        //zoom no sesc
+        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(SescSjc, 18);
+        mMap.moveCamera(update);
+        /*//Cria um circulo em toda a área do evento.
+        circleOptions = new CircleOptions().center(SescSjc).radius(30);
+        // Adiciona o circulo no mapa.
+        Circulo = mMap.addCircle(circleOptions);*/
+        MapConfig();
+    }
+
+    //Abre o mapa com um marcador no sesi.
+    private void PositionSesi() {
+        LatLng SesiSjc = new LatLng(-23.248826, -45.884914);
+        mMap.addMarker(new MarkerOptions().position(SesiSjc).title("Teatro Sesi"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(SesiSjc));
+        //zoom no Teatro sesi
+        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(SesiSjc, 18);
+        mMap.moveCamera(update);
+        /*//Cria um circulo em toda a área do evento.
+        circleOptions = new CircleOptions().center(SesiSjc).radius(30);
+        // Adiciona o circulo no mapa.
+        Circulo = mMap.addCircle(circleOptions);*/
+        MapConfig();
+    }
+
+    //Abre o mapa com uma posição inicial localizada em São José dos Campos
+    private void PositionSjc() {
+        // Adiciona a marca
+        LatLng Sjk = new LatLng(-23.215932, -45.895167);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(Sjk));
+        //zoom no sesc
+        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(Sjk, 15);
+        mMap.moveCamera(update);
+        MapConfig();
+    }
+
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_maps);
         // Cria o fragmento de mapa, para executar o map.

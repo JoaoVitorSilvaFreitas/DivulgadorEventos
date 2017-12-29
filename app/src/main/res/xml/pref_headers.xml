@@ -3,7 +3,7 @@
     <!-- Adiciona os fragmentos criado na telaConfiguraçoes, sendo eles botoes. -->
     <header
         android:fragment="com.example.joaovitor.divulgadoreventos.Interfaces.telaConfiguracoes$GeneralPreferenceFragment"
-        android:icon="@drawable/ic_info_black_24dp"
+        android:icon="@drawable/ic_menu_manage"
         android:title="@string/pref_Gerais" />
 
     <header

@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">DivulgadorEventos</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nDraw_Open">Abrir navigation drawer</string>
+    <string name="nDraw_Close">Fechar navigation drawer</string>
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_tela_mapa">Map</string>
@@ -19,7 +19,7 @@
 
     <!-- Strings related to Settings -->
 
-    <!-- Example General settings -->
+    <!-- Strings das configurações gerais -->
     <string name="pref_Gerais">Configurações gerais</string>
 
     <string name="pref_title_social_recommendations">Enable social recommendations</string>

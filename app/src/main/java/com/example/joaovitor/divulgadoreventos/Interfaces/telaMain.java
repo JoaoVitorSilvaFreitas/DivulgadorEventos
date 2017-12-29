@@ -23,6 +23,7 @@ import android.widget.Switch;
 
 import com.example.joaovitor.divulgadoreventos.Fragmentos.telaMaps;
 import com.example.joaovitor.divulgadoreventos.R;
+import com.google.android.gms.maps.MapFragment;
 
 public class telaMain extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -102,7 +103,7 @@ public class telaMain extends AppCompatActivity
         });
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, Lay_Draw, tBar_Tool, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, Lay_Draw, tBar_Tool, R.string.nDraw_Open, R.string.nDraw_Close);
         //Layout do navigationDrawer
         Lay_Draw.addDrawerListener(toggle);
         toggle.syncState();
