@@ -23,7 +23,6 @@ public class telaMaps extends FragmentActivity implements OnMapReadyCallback {
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
     // Valor booleano nulo para verificar a permissão.
     private boolean PermissaoLocalizacao;
-    private Location UltimaPosicao;
     private GoogleMap mMap;
 
     //abre o mapa com um marcador no sesc.
@@ -97,7 +96,6 @@ public class telaMaps extends FragmentActivity implements OnMapReadyCallback {
                 // caso nao esteja ativa, o usuario tera que permitir o acesso ao GPS,
                 mMap.setMyLocationEnabled(true);
                 mMap.getUiSettings().setMyLocationButtonEnabled(true);
-                //UltimaPosicao = null;
                 VerificaPermissao();
             }
         } catch (SecurityException e) {

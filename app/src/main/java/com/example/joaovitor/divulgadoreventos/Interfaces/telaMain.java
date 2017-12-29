@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabItem;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -17,6 +19,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Switch;
 
 import com.example.joaovitor.divulgadoreventos.Fragmentos.telaMaps;
 import com.example.joaovitor.divulgadoreventos.R;
@@ -65,7 +68,9 @@ public class telaMain extends AppCompatActivity
     private Toolbar tBar_Tool;
     private DrawerLayout Lay_Draw;
     private NavigationView Lay_NavView;
-    private Spinner Spn_Cidade;
+    private TabItem iTab_Culturais;
+    private TabItem iTab_Gerais;
+    //private Spinner Spn_Cidade;
     //Array para ser inserido dentro do Spinner de cidades.
     private String[] cidadesAdap = new String[]{"São José dos Campos"};
 
@@ -77,11 +82,13 @@ public class telaMain extends AppCompatActivity
         Lay_Draw = (DrawerLayout) findViewById(R.id.Lay_Draw);
         tBar_Tool = (Toolbar) findViewById(R.id.tBar_Tool);
         setSupportActionBar(tBar_Tool);
+        iTab_Culturais = (TabItem) findViewById(R.id.iTab_Culturais);
+        iTab_Gerais = (TabItem) findViewById(R.id.iTab_Gerais);
         Lay_NavView = (NavigationView) findViewById(R.id.Lay_NavView);
-        Spn_Cidade = (Spinner) findViewById(R.id.Spn_Cidade);
+        //Spn_Cidade = (Spinner) findViewById(R.id.Spn_Cidade);
 
-        // FloatingButton para abrir na cidade com possibilidades de zoom e
-        // posicionamento atual.
+        /* FloatingButton para abrir na cidade com possibilidades de zoom e
+        posicionamento atual.*/
         Fab_Map = (FloatingActionButton) findViewById(R.id.Fab_Map);
         Fab_Map.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +108,7 @@ public class telaMain extends AppCompatActivity
         toggle.syncState();
         Lay_NavView.setNavigationItemSelectedListener(this);
 
-        ArrayAdapter<String> CityAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, cidadesAdap);
+        /*ArrayAdapter<String> CityAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, cidadesAdap);
         Spn_Cidade.setAdapter(CityAdapter);
         Spn_Cidade.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -113,7 +120,7 @@ public class telaMain extends AppCompatActivity
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });
+        }); */
 
     }
 

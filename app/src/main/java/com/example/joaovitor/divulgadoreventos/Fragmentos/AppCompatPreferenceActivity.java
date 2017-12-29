@@ -1,4 +1,4 @@
-package com.example.joaovitor.divulgadoreventos.Interfaces;
+package com.example.joaovitor.divulgadoreventos.Fragmentos;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
