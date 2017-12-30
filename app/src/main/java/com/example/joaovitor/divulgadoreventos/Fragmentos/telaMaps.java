@@ -1,13 +1,14 @@
 package com.example.joaovitor.divulgadoreventos.Fragmentos;
 
+import android.content.Context;
 import android.content.pm.PackageManager;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.joaovitor.divulgadoreventos.R;
 import com.google.android.gms.maps.CameraUpdate;
@@ -15,13 +16,11 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-import java.util.Map;
 
 
 public class telaMaps extends FragmentActivity implements OnMapReadyCallback {
@@ -29,8 +28,6 @@ public class telaMaps extends FragmentActivity implements OnMapReadyCallback {
     // Valor booleano nulo para verificar a permissão.
     private boolean PermissaoLocalizacao;
     private GoogleMap mMap;
-    private Circle Circulo;
-    private CircleOptions circleOptions;
 
     //Configurações gerais do mapa
     private void MapConfig() {
@@ -88,30 +85,27 @@ public class telaMaps extends FragmentActivity implements OnMapReadyCallback {
     //abre o mapa com um marcador no sesc.
     private void PositionSesc() {
         LatLng SescSjc = new LatLng(-23.200979, -45.892457);
-        mMap.addMarker(new MarkerOptions().position(SescSjc).title("Sesc São José dos Campos"));
+        //Setando para onde o mapa irá mover e o zoom
+        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(SescSjc, 18);
+        //Adiciona um marcador no mapa, iniciando no sesc.
+        mMap.addMarker(new MarkerOptions().position(SescSjc).title("Sesc"))
+                .setSnippet("Eventos Culturais, esportes , entre outros.");
         mMap.moveCamera(CameraUpdateFactory.newLatLng(SescSjc));
         //zoom no sesc
-        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(SescSjc, 18);
         mMap.moveCamera(update);
-        /*//Cria um circulo em toda a área do evento.
-        circleOptions = new CircleOptions().center(SescSjc).radius(30);
-        // Adiciona o circulo no mapa.
-        Circulo = mMap.addCircle(circleOptions);*/
         MapConfig();
     }
 
     //Abre o mapa com um marcador no sesi.
     private void PositionSesi() {
         LatLng SesiSjc = new LatLng(-23.248826, -45.884914);
+        //Setando para onde o mapa irá mover e o zoom
+        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(SesiSjc, 18);
+        //Adiciona um marcador no mapa, iniciando no sesc
         mMap.addMarker(new MarkerOptions().position(SesiSjc).title("Teatro Sesi"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(SesiSjc));
         //zoom no Teatro sesi
-        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(SesiSjc, 18);
         mMap.moveCamera(update);
-        /*//Cria um circulo em toda a área do evento.
-        circleOptions = new CircleOptions().center(SesiSjc).radius(30);
-        // Adiciona o circulo no mapa.
-        Circulo = mMap.addCircle(circleOptions);*/
         MapConfig();
     }
 
