@@ -10,6 +10,7 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
@@ -20,6 +21,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -121,8 +123,11 @@ public class telaMain extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Ativar o menu da toolbar
-        //getMenuInflater().inflate(R.menu.tela_main, menu);
+        // Ativar o campo de busca da toolbar
+        getMenuInflater().inflate(R.menu.tela_main, menu);
+        MenuItem CampoDeBusca = menu.findItem(R.id.buscar_CampoDeBusca);
+        SearchView sView = (SearchView) MenuItemCompat.getActionView(CampoDeBusca);
+
         return true;
     }
 
