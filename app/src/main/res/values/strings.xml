@@ -3,8 +3,6 @@
 
     <string name="nDraw_Open">Abrir navigation drawer</string>
     <string name="nDraw_Close">Fechar navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
     <string name="title_activity_tela_mapa">Map</string>
     <string name="title_activity_maps">Map</string>
 
@@ -28,19 +26,7 @@
     </string>
 
     <string name="pref_Display">Nome de Exibição</string>
-    <string name="pref_DisplayName">Marcos Sousa</string>
-
-    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
-    <string-array name="pref_example_list_titles">
-        <item>Always</item>
-        <item>When possible</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_example_list_values">
-        <item>1</item>
-        <item>0</item>
-        <item>-1</item>
-    </string-array>
+    <string name="pref_nomeExibicao">Marcos Sousa</string>
 
     <!-- Strings da tela de sincronizaçao-->
     <string name="pref_header_data_sync">Data &amp; sync</string>
@@ -90,7 +76,8 @@
     <string name="title_activity_tela_configuracoes">Settings</string>
 
     <string name="pref_title_sync_frequency">Sync frequency</string>
-
     <string name="pref_title_system_sync_settings">System sync settings</string>
+    <string name="title_activity_tela_tabbed">telaTabbed</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
 </resources>

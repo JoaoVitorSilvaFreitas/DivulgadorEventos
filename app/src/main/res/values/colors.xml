@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!-- Default Color -->
+    <!--
+    <color name="CorPrimariaEscura">#303F9F</color>
+    <color name="CorPrimaria">#3F51B5</color>
+    <color name="AtenuacaoDeCor">#FF4081</color> -->
 
-    <color name="CorPrimaria">#8bc34a</color>
+    <!-- Cor verde -->
+    <!--
     <color name="CorPrimariaEscura">#689f38</color>
-    <color name="AtenuacaoDeCor">#4caf50</color>
+    <color name="CorPrimaria">#8bc34a</color>
+    <color name="AtenuacaoDeCor">#4caf50</color> -->
+
+    <!-- Cor cinza -->
+    <color name="CorPrimariaEscura">#263238</color>
+    <color name="CorPrimaria">#37474F</color>
+    <color name="AtenuacaoDeCor">#455A64</color>
 </resources>
