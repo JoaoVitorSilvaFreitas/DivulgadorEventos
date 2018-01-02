@@ -88,8 +88,8 @@ public class telaMain extends AppCompatActivity
         Lay_NavView = (NavigationView) findViewById(R.id.Lay_NavView);
         //Spn_Cidade = (Spinner) findViewById(R.id.Spn_Cidade);
 
-        /* FloatingButton para abrir na cidade com possibilidades de zoom e
-        posicionamento atual.*/
+        /* FloatingButton para abrir o mapa na cidade de São José dos campos e também
+        adiciona os marcadores onde será exibido os eventos culturais, casas de culturas e etc...*/
         Fab_Map = (FloatingActionButton) findViewById(R.id.Fab_Map);
         Fab_Map.setOnClickListener(new View.OnClickListener() {
             @Override
