@@ -2,6 +2,7 @@ package com.example.joaovitor.divulgadoreventos.Interfaces;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
 import android.preference.Preference;
@@ -11,6 +12,7 @@ import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
@@ -28,7 +30,10 @@ import android.widget.TextView;
 
 import com.example.joaovitor.divulgadoreventos.Fragmentos.telaMaps;
 import com.example.joaovitor.divulgadoreventos.R;
+import com.example.joaovitor.divulgadoreventos.SwipeAdapter.SwipeAdapter;
 import com.google.android.gms.maps.MapFragment;
+
+import static com.example.joaovitor.divulgadoreventos.R.id.pref_Nome;
 
 public class telaMain extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -76,6 +81,7 @@ public class telaMain extends AppCompatActivity
     private String RecebeNome;
     private TextView Txt_HeadNome;
     private String nome;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +93,11 @@ public class telaMain extends AppCompatActivity
         setSupportActionBar(tBar_Tool);
         Lay_NavView = (NavigationView) findViewById(R.id.Lay_NavView);
         Txt_HeadNome = (TextView) findViewById(R.id.Txt_HeadNome);
+
+        /*ViewPager do swipe adapter para fazer as telas interagirem através de slide */
+        viewPager = (ViewPager)findViewById(R.id.Vp_ViewPager);
+        SwipeAdapter swipeAdapter = new SwipeAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(swipeAdapter);
 
         /* FloatingButton para abrir o mapa na cidade de São José dos campos e também
         adiciona os marcadores onde será exibido os eventos culturais, casas de culturas e etc...*/
@@ -108,7 +119,6 @@ public class telaMain extends AppCompatActivity
         Lay_Draw.addDrawerListener(toggle);
         toggle.syncState();
         Lay_NavView.setNavigationItemSelectedListener(this);
-
     }
 
     @Override
@@ -123,8 +133,9 @@ public class telaMain extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Ativar o campo de busca da toolbar
+        // Infla o menu da toolbar
         getMenuInflater().inflate(R.menu.tela_main, menu);
+        // Cria um item do menu
         MenuItem CampoDeBusca = menu.findItem(R.id.buscar_CampoDeBusca);
         SearchView sView = (SearchView) MenuItemCompat.getActionView(CampoDeBusca);
 

@@ -19,7 +19,6 @@ import android.preference.RingtonePreference;
 import android.support.v7.app.ActionBar;
 import android.text.TextUtils;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.example.joaovitor.divulgadoreventos.Fragmentos.AppCompatPreferenceActivity;
 import com.example.joaovitor.divulgadoreventos.R;
@@ -178,13 +177,9 @@ public class telaConfiguracoes extends AppCompatPreferenceActivity {
             addPreferencesFromResource(R.xml.pref_gerais);
             setHasOptionsMenu(true);
 
-            // Bind the summaries of EditText/List/Dialog/Ringtone preferences
-            // to their values. When their values change, their summaries are
-            // updated to reflect the new value, per the Android Design
-            // guidelines.
             bindPreferenceSummaryToValue(findPreference("key_nomeExibicao"));
-
         }
+
 
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {
@@ -246,6 +241,7 @@ public class telaConfiguracoes extends AppCompatPreferenceActivity {
             // updated to reflect the new value, per the Android Design
             // guidelines.
             bindPreferenceSummaryToValue(findPreference("key_Intervalo"));
+
         }
 
         @Override
