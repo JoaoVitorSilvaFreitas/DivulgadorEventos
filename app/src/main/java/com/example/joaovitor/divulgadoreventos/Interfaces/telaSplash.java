@@ -10,6 +10,7 @@ import com.example.joaovitor.divulgadoreventos.R;
 
 public class telaSplash extends AppCompatActivity {
 
+    //Função para chamar a telaMain
     private void AbrirMain(){
         Intent intent = new Intent(this,telaMain.class);
         startActivity(intent);
@@ -20,6 +21,7 @@ public class telaSplash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_splash);
+        //Handler para adicionar delay ao exibir o logo.
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
