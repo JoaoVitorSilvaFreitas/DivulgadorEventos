@@ -28,7 +28,7 @@ public class telaSplash extends AppCompatActivity {
             public void run() {
                 AbrirMain();
             }
-        },2000);
+        },2500);
 
     }
 }
