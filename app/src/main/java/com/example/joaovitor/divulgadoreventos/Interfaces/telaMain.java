@@ -18,7 +18,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
@@ -74,8 +76,8 @@ public class telaMain extends AppCompatActivity
     private TextView Txt_HeadNome;
     private String nome;
     private ViewPager Vp_ViewPager;
-    private ActionBar actionBar;
     private TabLayout tab_Layout;
+    private ImageView Img_Fotos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,13 +91,13 @@ public class telaMain extends AppCompatActivity
         Txt_HeadNome = (TextView) findViewById(R.id.Txt_HeadNome);
         Vp_ViewPager = (ViewPager)findViewById(R.id.Vp_ViewPager);
         tab_Layout = (TabLayout) findViewById(R.id.tab_Layout);
+        Img_Fotos = (ImageView) findViewById(R.id.Img_Fotos);
 
         /*ViewPager do swipe adapter e o tablayout
         para fazer as telas interagirem através de slide */
         AdaptadorSwipe swipeAdapter = new AdaptadorSwipe(getSupportFragmentManager());
         Vp_ViewPager.setAdapter(swipeAdapter);
         tab_Layout.setupWithViewPager(Vp_ViewPager);
-
 
         /* FloatingButton para abrir o mapa na cidade de São José dos campos e também
         adiciona os marcadores onde será exibido os eventos culturais, casas de culturas e etc...*/
