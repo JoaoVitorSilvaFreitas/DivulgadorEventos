@@ -2,18 +2,16 @@ package com.example.joaovitor.divulgadoreventos.Interfaces;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.EditTextPreference;
-import android.preference.Preference;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -21,19 +19,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.SearchView;
-import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 
+import com.astuetz.PagerSlidingTabStrip;
+import com.example.joaovitor.divulgadoreventos.SwipeAdaptador.AdaptadorSwipe;
 import com.example.joaovitor.divulgadoreventos.Fragmentos.telaMaps;
 import com.example.joaovitor.divulgadoreventos.R;
-import com.example.joaovitor.divulgadoreventos.SwipeAdapter.SwipeAdapter;
-import com.google.android.gms.maps.MapFragment;
-
-import static com.example.joaovitor.divulgadoreventos.R.id.pref_Nome;
 
 public class telaMain extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -81,7 +73,9 @@ public class telaMain extends AppCompatActivity
     private String RecebeNome;
     private TextView Txt_HeadNome;
     private String nome;
-    private ViewPager viewPager;
+    private ViewPager Vp_ViewPager;
+    private ActionBar actionBar;
+    private TabLayout tab_Layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,11 +87,15 @@ public class telaMain extends AppCompatActivity
         setSupportActionBar(tBar_Tool);
         Lay_NavView = (NavigationView) findViewById(R.id.Lay_NavView);
         Txt_HeadNome = (TextView) findViewById(R.id.Txt_HeadNome);
+        Vp_ViewPager = (ViewPager)findViewById(R.id.Vp_ViewPager);
+        tab_Layout = (TabLayout) findViewById(R.id.tab_Layout);
 
-        /*ViewPager do swipe adapter para fazer as telas interagirem através de slide */
-        viewPager = (ViewPager)findViewById(R.id.Vp_ViewPager);
-        SwipeAdapter swipeAdapter = new SwipeAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(swipeAdapter);
+        /*ViewPager do swipe adapter e o tablayout
+        para fazer as telas interagirem através de slide */
+        AdaptadorSwipe swipeAdapter = new AdaptadorSwipe(getSupportFragmentManager());
+        Vp_ViewPager.setAdapter(swipeAdapter);
+        tab_Layout.setupWithViewPager(Vp_ViewPager);
+
 
         /* FloatingButton para abrir o mapa na cidade de São José dos campos e também
         adiciona os marcadores onde será exibido os eventos culturais, casas de culturas e etc...*/
