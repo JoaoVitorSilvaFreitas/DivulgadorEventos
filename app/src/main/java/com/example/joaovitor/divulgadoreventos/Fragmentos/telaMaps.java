@@ -9,7 +9,6 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
 import com.example.joaovitor.divulgadoreventos.R;
-import com.example.joaovitor.divulgadoreventos.teste;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
