@@ -5,20 +5,20 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_pesquisa"
+            android:id="@+id/Nav_pesquisa"
             android:icon="@drawable/ic_search_black_24dp"
             android:title="@string/Nome_Pesquisa"
             tools:targetApi="lollipop" />
-        <item android:title="@string/Nome_TipoEvento">
+        <item android:title="@string/Nav_TipoEvento">
             <menu>
                 <item
                     android:id="@+id/nav_culturais"
                     android:icon="@android:drawable/ic_dialog_map"
-                    android:title="@string/Nome_Culturais" />
+                    android:title="@string/Nav_Culturais" />
                 <item
                     android:id="@+id/nav_esportes"
                     android:icon="@android:drawable/ic_dialog_map"
-                    android:title="@string/Nome_Esportes" />
+                    android:title="@string/Nav_Esportes" />
             </menu>
         </item>
         <item android:title="@string/Nav_Opcoes">
@@ -26,12 +26,16 @@
                 <item
                     android:id="@+id/nav_config"
                     android:icon="@drawable/ic_menu_manage"
-                    android:title="@string/Act_Config" />
+                    android:title="@string/Nav_Config" />
 
                 <item
                     android:id="@+id/nav_info"
                     android:icon="@drawable/ic_info_black_24dp"
                     android:title="@string/Nav_Informacoes" />
+
+                <item
+                    android:id="@+id/nav_sair"
+                    android:title="@string/Nav_Sair" />
 
             </menu>
         </item>

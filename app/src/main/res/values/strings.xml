@@ -7,17 +7,16 @@
     <string name="title_activity_maps">Map</string>
 
     <string name="Nome_Pesquisa">Pesquisar</string>
-    <string name="Nome_TipoEvento">Tipos de eventos</string>
-    <string name="Nome_Culturais">Eventos culturais</string>
-    <string name="Nome_Esportes">Esportes</string>
-    <string name="Act_Config">Configurações</string>
+    <string name="Nav_TipoEvento">Tipos de eventos</string>
+    <string name="Nav_Culturais">Eventos culturais</string>
+    <string name="Nav_Esportes">Esportes</string>
+    <string name="Nav_Sair">Sair</string>
+    <string name="Nav_Config">Configurações</string>
     <string name="Nav_Opcoes">Opções</string>
     <string name="Nav_Informacoes">Informações</string>
     <string name="Nome_Configuracoes">Configurações</string>
     <string name="Nome_Busca">Buscar eventos</string>
     <string name="Cdesc_Descricao">Content Description</string>
-
-    <!-- Strings related to Settings -->
 
     <!-- Strings das configurações gerais -->
     <string name="pref_Gerais">Configurações gerais</string>
@@ -86,5 +85,26 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="Nome_Email">Email</string>
+    <string name="Nome_Password">Digite a sua senha</string>
+    <string name="Nome_Login">Fazer login ou registrar</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_tela_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+
 
 </resources>

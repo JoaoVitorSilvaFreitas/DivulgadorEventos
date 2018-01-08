@@ -30,18 +30,20 @@ public class telaMain extends AppCompatActivity
 
     //intent para abrir a posiçao do sesi
     public void CulturaisIntent() {
-        Intent itsesi = new Intent(telaMain.this, telaMaps.class);
+        Intent itsesi = new Intent(this, telaMaps.class);
         itsesi.putExtra("Cultura", 2);
         startActivity(itsesi);
     }
+
     //intent para abrir a posição do sesc
     public void EsportesIntent() {
-        Intent itsesc = new Intent(telaMain.this, telaMaps.class);
+        Intent itsesc = new Intent(this, telaMaps.class);
         itsesc.putExtra("Esportes", 1);
         startActivity(itsesc);
     }
+
     //Intent que mostra uma mensagem.
-    private void InformacoesAlert(){
+    private void InformacoesAlert() {
         final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
 
         dialog.setIcon(R.drawable.ic_menu_manage);
@@ -58,10 +60,16 @@ public class telaMain extends AppCompatActivity
         });
         dialog.show();
     }
+
     //intent para startar a tela de configurações
-    private void Configs(){
-        Intent itconfig = new Intent(telaMain.this,telaConfiguracoes.class);
+    private void Configs() {
+        Intent itconfig = new Intent(this, telaConfiguracoes.class);
         startActivity(itconfig);
+    }
+
+    private void RetornoLogin(){
+        Intent itlogin = new Intent(this,telaLogin.class);
+        startActivity(itlogin);
     }
 
     private FloatingActionButton Fab_Map;
@@ -85,7 +93,7 @@ public class telaMain extends AppCompatActivity
         setSupportActionBar(tBar_Tool);
         Lay_NavView = (NavigationView) findViewById(R.id.Lay_NavView);
         Txt_HeadNome = (TextView) findViewById(R.id.Txt_HeadNome);
-        Vp_ViewPager = (ViewPager)findViewById(R.id.Vp_ViewPager);
+        Vp_ViewPager = (ViewPager) findViewById(R.id.Vp_ViewPager);
         tab_Layout = (TabLayout) findViewById(R.id.tab_Layout);
         Img_Fotos = (ImageView) findViewById(R.id.Img_Fotos);
 
@@ -164,6 +172,9 @@ public class telaMain extends AppCompatActivity
                 break;
             case R.id.nav_info:
                 InformacoesAlert();
+                break;
+            case R.id.nav_sair:
+                RetornoLogin();
                 break;
         }
 

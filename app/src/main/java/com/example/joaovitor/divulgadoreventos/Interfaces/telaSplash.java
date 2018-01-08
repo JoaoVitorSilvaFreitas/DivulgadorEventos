@@ -10,9 +10,9 @@ import com.example.joaovitor.divulgadoreventos.R;
 
 public class telaSplash extends AppCompatActivity {
 
-    //Função para chamar a telaMain
-    private void AbrirMain(){
-        Intent intent = new Intent(this,telaMain.class);
+    //Função para chamar a telaLogin.
+    private void AbrirLogin(){
+        Intent intent = new Intent(this,telaLogin.class);
         startActivity(intent);
         finish();
     }
@@ -26,7 +26,8 @@ public class telaSplash extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                AbrirMain();
+                // AbrirMain();
+                AbrirLogin();
             }
         },2500);
 
