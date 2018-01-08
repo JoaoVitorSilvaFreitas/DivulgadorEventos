@@ -7,9 +7,9 @@
     <string name="title_activity_maps">Map</string>
 
     <string name="Nome_Pesquisa">Pesquisar</string>
-    <string name="Nome_Locais">Locais importantes</string>
-    <string name="Nome_Sesi">Teatro Sesi</string>
-    <string name="Nome_Sesc">Sesc</string>
+    <string name="Nome_TipoEvento">Tipos de eventos</string>
+    <string name="Nome_Culturais">Eventos culturais</string>
+    <string name="Nome_Esportes">Esportes</string>
     <string name="Act_Config">Configurações</string>
     <string name="Nav_Opcoes">Opções</string>
     <string name="Nav_Informacoes">Informações</string>

@@ -1,6 +1,5 @@
 package com.example.joaovitor.divulgadoreventos.Fragmentos;
 
-import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,18 +7,16 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.example.joaovitor.divulgadoreventos.R;
+import com.example.joaovitor.divulgadoreventos.teste;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.Circle;
-import com.google.android.gms.maps.model.CircleOptions;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class telaMaps extends FragmentActivity implements OnMapReadyCallback {
@@ -27,6 +24,7 @@ public class telaMaps extends FragmentActivity implements OnMapReadyCallback {
     // Valor booleano nulo para verificar a permissão.
     private boolean PermissaoLocalizacao;
     private GoogleMap mMap;
+    //Casas de cultura e eventos - Marcadores verdes.
     private LatLng SesiSjc = new LatLng(-23.248826, -45.884914);
     private LatLng SescSjc = new LatLng(-23.200979, -45.892457);
     private LatLng Sjk = new LatLng(-23.215932, -45.895167);
@@ -34,6 +32,11 @@ public class telaMaps extends FragmentActivity implements OnMapReadyCallback {
     private LatLng VicentinaA = new LatLng(-23.197856, -45.896316);
     private LatLng ParqueSantosD = new LatLng(-23.199851, -45.891093);
     private LatLng CcFlavioC = new LatLng(-23.273900, -45.891711);
+    //Esportes - marcadores azuis.
+    private LatLng MartinsPereira = new LatLng(-23.187581, -45.869776);
+    private LatLng TenisClube = new LatLng(-23.193209, -45.892946);
+    private LatLng Pavilhao = new LatLng(-23.228609, -45.899420);
+    private LatLng PoliCpo = new LatLng(-23.270406, -45.903192);
 
     /* Função responsável para verificar a permissão, caso não esteja ativa ele requisita a
      autorização do usuário */
@@ -90,45 +93,106 @@ public class telaMaps extends FragmentActivity implements OnMapReadyCallback {
         //Verificar e ativar a permissão do usuário
         VerificaPermissao();
         UpdatePermissao();
+        //Permissoes();
     }
 
     //Configurações dos marcadores no mapa
     private void Marcadores(){
-        mMap.addMarker(new MarkerOptions().position(SesiSjc).title("Teatro Sesi")
+        mMap.addMarker(new MarkerOptions().position(SesiSjc)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                .title("Teatro Sesi")
                 .snippet("Feiras culturais, Apresentações"));
-        mMap.addMarker(new MarkerOptions().position(SescSjc).title("Sesc"))
+        mMap.addMarker(new MarkerOptions().position(SescSjc)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                .title("Sesc"))
                 .setSnippet("Eventos Culturais, esportes , entre outros.");
-        mMap.addMarker(new MarkerOptions().position(ParqueCity).title("Parque da Cidade")
+        mMap.addMarker(new MarkerOptions().position(ParqueCity)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                .title("Parque da Cidade")
                 .snippet("Eventos diversos, Museu do folclore"));
-        mMap.addMarker(new MarkerOptions().position(VicentinaA).title("Parque Vicentina Aranha")
+        mMap.addMarker(new MarkerOptions().position(VicentinaA)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                .title("Parque Vicentina Aranha")
                 .snippet("Atividades Culturais, ecologicas e esportivas"));
-        mMap.addMarker(new MarkerOptions().position(ParqueSantosD).title("Parque Santos Dumont")
+        mMap.addMarker(new MarkerOptions().position(ParqueSantosD)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                .title("Parque Santos Dumont")
                 .snippet("Parque com lago e equipamentos de ginástica"));
         mMap.addMarker(new MarkerOptions().position(CcFlavioC)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
                 .title("Casa de Cultura Flávio Craveiro")
                 .snippet("Eventos culturais, Shows entre outros."));
+        mMap.addMarker(new MarkerOptions().position(MartinsPereira)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                .title("Estádio Martins Pereira"))
+                .setSnippet("Eventos esportivos: foco em futebol");
+        mMap.addMarker(new MarkerOptions().position(TenisClube)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                .title("Tênis Clube São José"))
+                .setSnippet("Eventos de esportes em geral");
+        mMap.addMarker(new MarkerOptions().position(Pavilhao)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                .title("Pavilhão São José dos Campos"))
+                .setSnippet("Eventos Culturais, esportes, entre outros.");
+        mMap.addMarker(new MarkerOptions().position(PoliCpo)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                .title("PoliCpo"))
+                .setSnippet("Esportes, área de lazer, eventos aleatórios.");
     }
 
     //abre o mapa com um marcador no sesc.
-    private void PositionSesc() {
-        //Setando para onde o mapa irá mover e o zoom
-        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(SescSjc, 18);
-        //Adiciona um marcador no mapa, iniciando no sesc.
-        mMap.addMarker(new MarkerOptions().position(SescSjc).title("Sesc"))
-                .setSnippet("Eventos Culturais, esportes , entre outros.");
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(SescSjc));
+    private void PositionEsportes() {
+        //Setando para onde o mapa irá mover e o zoom para o Tênis Clube sjc
+        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(TenisClube, 13);
+        mMap.addMarker(new MarkerOptions().position(MartinsPereira)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                .title("Estádio Martins Pereira"))
+                .setSnippet("Eventos esportivos: foco em futebol");
+        mMap.addMarker(new MarkerOptions().position(TenisClube)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                .title("Tênis Clube São José"))
+                .setSnippet("Eventos de esportes em geral");
+        mMap.addMarker(new MarkerOptions().position(Pavilhao)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                .title("Pavilhão São José dos Campos"))
+                .setSnippet("Eventos Culturais, esportes, entre outros.");
+        mMap.addMarker(new MarkerOptions().position(PoliCpo)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                .title("PoliCpo"))
+                .setSnippet("Esportes, área de lazer, eventos aleatórios.");
         //zoom no sesc
         mMap.moveCamera(update);
         MapConfig();
     }
 
     //Abre o mapa com um marcador no sesi.
-    private void PositionSesi() {
-        //Setando para onde o mapa irá mover e o zoom
-        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(SesiSjc, 18);
-        //Adiciona um marcador no mapa, iniciando no sesc
-        mMap.addMarker(new MarkerOptions().position(SesiSjc).title("Teatro Sesi"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(SesiSjc));
+    private void PositionCultura() {
+        //Setando para onde o mapa irá mover e o zoom, posição atual do zoom, SesiSjc.
+        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(SesiSjc, 13);
+        mMap.addMarker(new MarkerOptions().position(SesiSjc)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                .title("Teatro Sesi"))
+                .setSnippet("Eventos Culturais, Exposições e teatro");
+        mMap.addMarker(new MarkerOptions().position(SescSjc)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                .title("Sesc São José dos Campos"))
+                .setSnippet("Eventos Culturais, Exposições, feiras culturais entre outros.");
+        mMap.addMarker(new MarkerOptions().position(ParqueSantosD)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                .title("Parque Santos Dumont"))
+                .setSnippet("Parque com Lago, area de lazer, eventos");
+        mMap.addMarker(new MarkerOptions().position(ParqueCity)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                .title("Parque da Cidade"))
+                .setSnippet("Eventos Culturais, Feiras, show em geral, entre outros.");
+        mMap.addMarker(new MarkerOptions().position(VicentinaA)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                .title("Parque Vicentina Aranha"))
+                .setSnippet("Eventos Culturais, Exposições e eventos em geral.");
+        mMap.addMarker(new MarkerOptions().position(CcFlavioC)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                .title("Casa de Cultura Flávio Craveiro"))
+                .setSnippet("Eventos Culturais, Cursos Gratuítos.");
         //zoom no Teatro sesi
         mMap.moveCamera(update);
         MapConfig();
@@ -138,13 +202,11 @@ public class telaMaps extends FragmentActivity implements OnMapReadyCallback {
     private void PositionSjc() {
         // Adiciona a marca
         Marcadores();
-        //zoom no sesc
+        //zoom na cidade de São José dos Campos
         CameraUpdate update = CameraUpdateFactory.newLatLngZoom(Sjk, 12);
         mMap.moveCamera(update);
         MapConfig();
     }
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -160,14 +222,14 @@ public class telaMaps extends FragmentActivity implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         /*Funcao bundle, recebendo o conteudo da intent que esta na tela main,
-        verificando qual botao esta sendo pressionado atraves de um "codigo" em String.*/
+        verificando qual botao esta sendo pressionado atraves de um "código" em String.*/
         Bundle bundle = getIntent().getExtras();
         if (bundle.containsKey("FloatingButton")) {
             PositionSjc();
-        } else if (bundle.containsKey("Sesc")) {
-            PositionSesc();
-        } else if (bundle.containsKey("Sesi")) {
-            PositionSesi();
+        } else if (bundle.containsKey("Esportes")) {
+            PositionEsportes();
+        } else if (bundle.containsKey("Cultura")) {
+            PositionCultura();
         }
 
     }

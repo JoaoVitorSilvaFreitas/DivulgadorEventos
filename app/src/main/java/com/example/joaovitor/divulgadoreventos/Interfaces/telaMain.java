@@ -29,15 +29,15 @@ public class telaMain extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     //intent para abrir a posiçao do sesi
-    public void SesiIntent() {
+    public void CulturaisIntent() {
         Intent itsesi = new Intent(telaMain.this, telaMaps.class);
-        itsesi.putExtra("Sesi", 2);
+        itsesi.putExtra("Cultura", 2);
         startActivity(itsesi);
     }
     //intent para abrir a posição do sesc
-    public void SescIntent() {
+    public void EsportesIntent() {
         Intent itsesc = new Intent(telaMain.this, telaMaps.class);
-        itsesc.putExtra("Sesc", 1);
+        itsesc.putExtra("Esportes", 1);
         startActivity(itsesc);
     }
     //Intent que mostra uma mensagem.
@@ -153,11 +153,11 @@ public class telaMain extends AppCompatActivity
         int id = item.getItemId();
 
         switch (item.getItemId()) {
-            case R.id.nav_sesc:
-                SescIntent();
+            case R.id.nav_esportes:
+                EsportesIntent();
                 break;
-            case R.id.nav_sesi:
-                SesiIntent();
+            case R.id.nav_culturais:
+                CulturaisIntent();
                 break;
             case R.id.nav_config:
                 Configs();
