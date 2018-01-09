@@ -46,7 +46,7 @@ public class telaMain extends AppCompatActivity
     private void InformacoesAlert() {
         final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
 
-        dialog.setIcon(R.drawable.ic_menu_manage);
+        dialog.setIcon(R.drawable.ic_information);
         dialog.setTitle("Informaçoes do app");
         dialog.setMessage("App em desenvolvimento por: Joao Vitor," +
                 " com a finalidade de divulgar eventos culturais na cidade de São josé dos campos");

@@ -3,7 +3,7 @@
     <!-- Adiciona os fragmentos criado na telaConfiguraçoes, sendo eles botoes. -->
     <header
         android:fragment="com.example.joaovitor.divulgadoreventos.Interfaces.telaConfiguracoes$GeneralPreferenceFragment"
-        android:icon="@drawable/ic_menu_manage"
+        android:icon="@drawable/ic_settings"
         android:title="@string/pref_Gerais" />
 
     <header
@@ -13,7 +13,7 @@
 
     <header
         android:fragment="com.example.joaovitor.divulgadoreventos.Interfaces.telaConfiguracoes$FragmentoSincronizacao"
-        android:icon="@drawable/ic_sync_black_24dp"
+        android:icon="@drawable/ic_reload"
         android:title="@string/pref_Intervalo" />
 
 </preference-headers>
