@@ -25,8 +25,7 @@ import com.example.joaovitor.divulgadoreventos.SwipeAdaptador.AdaptadorSwipe;
 import com.example.joaovitor.divulgadoreventos.Fragmentos.telaMaps;
 import com.example.joaovitor.divulgadoreventos.R;
 
-public class telaMain extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class telaMain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     //intent para abrir a posiçao do sesi
     public void CulturaisIntent() {
@@ -72,7 +71,7 @@ public class telaMain extends AppCompatActivity
         startActivity(itlogin);
     }
 
-    private FloatingActionButton Fab_Map;
+    public FloatingActionButton Fab_Map;
     private Toolbar tBar_Tool;
     private DrawerLayout Lay_Draw;
     private NavigationView Lay_NavView;
@@ -82,6 +81,7 @@ public class telaMain extends AppCompatActivity
     private ViewPager Vp_ViewPager;
     private TabLayout tab_Layout;
     private ImageView Img_Fotos;
+    private android.support.v4.app.FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

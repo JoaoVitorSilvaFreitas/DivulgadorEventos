@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Default Color -->
-    <!--
-    <color name="CorPrimariaEscura">#303F9F</color>
-    <color name="CorPrimaria">#3F51B5</color>
-    <color name="AtenuacaoDeCor">#FF4081</color> -->
+
+    <color name="CorPrimariaEscura1">#303F9F</color>
+    <color name="CorPrimaria1">#3F51B5</color>
+    <color name="AtenuacaoDeCor1">#FF4081</color>
 
     <!-- Cor verde -->
-    <!--
-    <color name="CorPrimariaEscura">#689f38</color>
-    <color name="CorPrimaria">#8bc34a</color>
-    <color name="AtenuacaoDeCor">#4caf50</color> -->
+
+    <color name="CorPrimariaEscura2">#689f38</color>
+    <color name="CorPrimaria2">#8bc34a</color>
+    <color name="AtenuacaoDeCor2">#4caf50</color>
 
     <!-- Cor cinza -->
-    <color name="CorPrimariaEscura">#263238</color>
-    <color name="CorPrimaria">#37474F</color>
-    <color name="AtenuacaoDeCor">#455A64</color>
+    <color name="CorPrimariaEscura3">#263238</color>
+    <color name="CorPrimaria3">#37474F</color>
+    <color name="AtenuacaoDeCor3">#455A64</color>
 </resources>

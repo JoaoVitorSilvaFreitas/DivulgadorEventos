@@ -32,6 +32,7 @@ public class pageFragment extends Fragment {
         String Mensagem = Integer.toString(bdl.getInt("count"));
         Txt_Teste.setText("A pagina atual é " + Mensagem );
         return view;
+
     }
 
 }

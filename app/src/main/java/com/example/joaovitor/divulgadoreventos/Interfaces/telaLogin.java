@@ -46,7 +46,7 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
      TODO: Remover este array quando o aplicativo for usar credenciais reais.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world","teste@teste:teste"
+            "foo@example.com:hello", "bar@example.com:world","teste@example.com:teste"
     };
 
     /*Acompanha a tarefa de login, para garantir que possa ser cancelada quando preciso.
@@ -91,7 +91,7 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
             @Override
             public void onClick(View view) {
                 attemptLogin();
-                AbrirMain();
+
             }
         });
 
@@ -183,18 +183,20 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
             // form field with an error.
             focusView.requestFocus();
         } else {
-            // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
+            /* Mostra a barra de progresso do login e abre a tela main para o usuário,
+            caso a e-mail ou o password estiver errado mensagens aparecerão.*/
             showProgress(true);
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
+            AbrirMain();
         }
     }
 
     // verifica se o e-mail é valido, se ele conter o "@".
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
-        return email.contains("@");
+
+        return email.contains("@example.com");
     }
 
     // verifica se o password é valido, se ele houver mais que 4 digitos.
