@@ -6,13 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <!-- Coluna 01 / linha 01 -->
     <android.support.v7.widget.CardView
         android:id="@+id/Cview_c1l1"
         android:layout_width="125dp"
         android:layout_height="115dp"
-        android:layout_columnWeight="1"
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="24dp"
@@ -36,6 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/Nav_Culturais"
                 app:srcCompat="@drawable/ic_theater" />
 
             <TextView
@@ -43,12 +42,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Nav_Culturais"
                 android:textAlignment="center"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
-
-
     </android.support.v7.widget.CardView>
 
     <!-- Coluna 02 / linha 01 -->
@@ -56,7 +52,6 @@
         android:id="@+id/Cview_c2l1"
         android:layout_width="125dp"
         android:layout_height="115dp"
-        android:layout_columnWeight="1"
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="36dp"
         android:layout_marginTop="32dp"
@@ -78,6 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/Nav_Esportes"
                 app:srcCompat="@drawable/ic_medal" />
 
             <TextView
@@ -86,11 +82,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Nav_Esportes"
                 android:textAlignment="center"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
-
-
     </android.support.v7.widget.CardView>
 
     <!-- Coluna 01 / linha 02 -->
@@ -98,7 +92,6 @@
         android:id="@+id/Cview_c1l2"
         android:layout_width="125dp"
         android:layout_height="115dp"
-        android:layout_columnWeight="1"
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="24dp"
@@ -122,6 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/Nome_Musicais"
                 app:srcCompat="@drawable/ic_quaver_1" />
 
             <TextView
@@ -129,12 +123,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Nome_Musicais"
                 android:textAlignment="center"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
-
-
     </android.support.v7.widget.CardView>
 
     <!-- Coluna 02 / linha 02 -->
@@ -142,7 +133,6 @@
         android:id="@+id/Cview_c2l2"
         android:layout_width="125dp"
         android:layout_height="115dp"
-        android:layout_columnWeight="1"
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="36dp"
         android:layout_marginTop="32dp"
@@ -163,6 +153,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/Nome_Alimenticios"
                 app:srcCompat="@drawable/ic_hamburger" />
 
             <TextView
@@ -170,12 +161,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Nome_Alimenticios"
                 android:textAlignment="center"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
-
-
     </android.support.v7.widget.CardView>
 
     <!-- Coluna 01 / linha 03 -->
@@ -183,7 +171,6 @@
         android:id="@+id/Cview_c1l3"
         android:layout_width="125dp"
         android:layout_height="115dp"
-        android:layout_columnWeight="1"
         android:layout_marginBottom="44dp"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="24dp"
@@ -207,6 +194,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/Nome_Gerais"
                 app:srcCompat="@drawable/ic_confetti" />
 
             <TextView
@@ -214,12 +202,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Nome_Gerais"
                 android:textAlignment="center"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
-
-
     </android.support.v7.widget.CardView>
 
     <!-- Coluna 02 / linha 03 -->
@@ -227,7 +212,6 @@
         android:id="@+id/Cview_c2l3"
         android:layout_width="125dp"
         android:layout_height="115dp"
-        android:layout_columnWeight="1"
         android:layout_marginBottom="44dp"
         android:layout_marginEnd="36dp"
         android:layout_marginTop="32dp"
@@ -248,19 +232,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/Nav_Config"
                 app:srcCompat="@drawable/ic_preference" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Configurações"
+                android:text="@string/Nav_Config"
                 android:textAlignment="center"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
-
-
     </android.support.v7.widget.CardView>
 
 </android.support.constraint.ConstraintLayout>
