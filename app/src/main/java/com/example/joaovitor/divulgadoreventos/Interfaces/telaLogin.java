@@ -49,9 +49,14 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
             "foo@example.com:hello", "bar@example.com:world","teste@example.com:teste"
     };
 
+    private static final int[] DUMMY_PASSWORD = new int[]{
+            123456,123456,123456
+    };
+
     /*Acompanha a tarefa de login, para garantir que possa ser cancelada quando preciso.
     Por exemplo, caso o login/email estiver errado ou não estiverem sincronizados um com o outro
      */
+
     private UserLoginTask mAuthTask = null;
 
     private void AbrirMain(){
@@ -202,6 +207,8 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
     // verifica se o password é valido, se ele houver mais que 4 digitos.
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
+
+
         return password.length() > 4;
     }
 
@@ -295,10 +302,7 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
         int IS_PRIMARY = 1;
     }
 
-    /**
-     * Represents an asynchronous login/registration task used to authenticate
-     * the user.
-     */
+
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String mEmail;
@@ -321,11 +325,14 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
 
             //Lê o array das credenciais padrões, para fazer o login.
             for (String credential : DUMMY_CREDENTIALS) {
+
                 String[] pieces = credential.split(":");
+
                 if (pieces[0].equals(mEmail)) {
                     // faz a checagem se a conta existe, caso exista, retorna um valor true.
                     return pieces[1].equals(mPassword);
                 }
+
             }
 
             // TODO: Registrar a nova conta aqui.

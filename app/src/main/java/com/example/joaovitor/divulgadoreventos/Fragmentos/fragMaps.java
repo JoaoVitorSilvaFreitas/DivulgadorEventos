@@ -1,13 +1,10 @@
 package com.example.joaovitor.divulgadoreventos.Fragmentos;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,19 +15,11 @@ import com.example.joaovitor.divulgadoreventos.R;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-import java.util.Map;
-
-/**
- * Created by joaovitor on 15/01/18.
- */
 
 public class fragMaps extends Fragment implements OnMapReadyCallback {
 
@@ -38,7 +27,6 @@ public class fragMaps extends Fragment implements OnMapReadyCallback {
     // Valor booleano nulo para verificar a permissão.
     private boolean PermissaoLocalizacao;
     private GoogleMap mMap;
-    private MapView mapView;
     private View view;
     private Fragment fragment;
 
@@ -172,15 +160,14 @@ public class fragMaps extends Fragment implements OnMapReadyCallback {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState){
         view = inflater.inflate(R.layout.activity_tela_maps,container,false);
+        //método para não Recriar o fragment toda vez que o usuário virar a tela
+        setRetainInstance(true);
         return view;
-
-
     }
 
     @Override

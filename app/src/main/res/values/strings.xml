@@ -9,13 +9,16 @@
     <string name="Nome_Pesquisa">Pesquisar</string>
     <string name="Nav_TipoEvento">Tipos de eventos</string>
     <string name="Nav_Culturais">Eventos culturais</string>
-    <string name="Nav_Esportes">Esportes</string>
+    <string name="Nav_Esportes">Eventos Esportivos</string>
     <string name="Nav_Sair">Sair</string>
     <string name="Nav_Config">Configurações</string>
     <string name="Nav_Opcoes">Opções</string>
     <string name="Nav_Informacoes">Informações</string>
     <string name="Nome_Configuracoes">Configurações</string>
+    <string name="Nome_Alimenticios">Eventos Alimenticios</string>
     <string name="Nome_Busca">Buscar eventos</string>
+    <string name="Nome_Musicais">Eventos Musicais</string>
+    <string name="Nome_Gerais">Eventos Gerais</string>
     <string name="Cdesc_Descricao">Content Description</string>
 
     <!-- Strings das configurações gerais -->

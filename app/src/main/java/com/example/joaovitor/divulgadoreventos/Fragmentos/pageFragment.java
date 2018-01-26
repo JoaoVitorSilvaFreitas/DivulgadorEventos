@@ -1,17 +1,13 @@
 package com.example.joaovitor.divulgadoreventos.Fragmentos;
 
 
-import android.app.ActionBar;
-import android.drm.DrmStore;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.joaovitor.divulgadoreventos.Fragmentos.telaMaps;
 import com.example.joaovitor.divulgadoreventos.R;
 
 public class pageFragment extends Fragment {
@@ -31,6 +27,8 @@ public class pageFragment extends Fragment {
         Bundle bdl = getArguments();
         String Mensagem = Integer.toString(bdl.getInt("count"));
         Txt_Teste.setText("A pagina atual é " + Mensagem );
+        //método para não Recriar o fragment toda vez que o usuário virar a tela
+        setRetainInstance(true);
         return view;
 
     }

@@ -16,12 +16,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
-import com.example.joaovitor.divulgadoreventos.SwipeAdaptador.AdaptadorSwipe;
+import com.example.joaovitor.divulgadoreventos.Adaptadores.AdaptadorSwipe;
 import com.example.joaovitor.divulgadoreventos.Fragmentos.telaMaps;
 import com.example.joaovitor.divulgadoreventos.R;
 
@@ -41,17 +40,18 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
         startActivity(itsesc);
     }
 
-    //Intent que mostra uma mensagem.
+    //Função para mostrar as mensagens
     private void InformacoesAlert() {
         final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
 
         dialog.setIcon(R.drawable.ic_information);
         dialog.setTitle("Informaçoes do app");
-        dialog.setMessage("App em desenvolvimento por: Joao Vitor," +
-                " com a finalidade de divulgar eventos culturais na cidade de São josé dos campos");
+        dialog.setMessage("\nApp em desenvolvimento por: João Vitor."  +
+                "\n\nA finalidade do projeto é fazer a divulgação de " +
+                "eventos culturais na cidade de São José dos campos");
         dialog.setCancelable(false);
 
-        dialog.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+        dialog.setNeutralButton("Fechar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
@@ -66,6 +66,7 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
         startActivity(itconfig);
     }
 
+    //intent para retornar a tela de login
     private void RetornoLogin(){
         Intent itlogin = new Intent(this,telaLogin.class);
         startActivity(itlogin);
@@ -103,20 +104,6 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
         Vp_ViewPager.setAdapter(swipeAdapter);
         tab_Layout.setupWithViewPager(Vp_ViewPager);
 
-        /* FloatingButton para abrir o mapa na cidade de São José dos campos e também
-        adiciona os marcadores onde será exibido os eventos culturais, casas de culturas e etc...*/
-        Fab_Map = (FloatingActionButton) findViewById(R.id.Fab_Map);
-        Fab_Map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (view == Fab_Map) {
-                    Intent intent = new Intent(telaMain.this, telaMaps.class);
-                    intent.putExtra("FloatingButton", 0);
-                    startActivity(intent);
-                }
-            }
-        });
-
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, Lay_Draw, tBar_Tool, R.string.nDraw_Open, R.string.nDraw_Close);
         //Layout do navigationDrawer
@@ -127,7 +114,6 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
 
     @Override
     public void onBackPressed() {
-
         if (Lay_Draw.isDrawerOpen(GravityCompat.START)) {
             Lay_Draw.closeDrawer(GravityCompat.START);
         } else {
@@ -142,17 +128,12 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
         // Cria um item do menu
         MenuItem CampoDeBusca = menu.findItem(R.id.buscar_CampoDeBusca);
         SearchView sView = (SearchView) MenuItemCompat.getActionView(CampoDeBusca);
-
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -177,7 +158,6 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
                 RetornoLogin();
                 break;
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.Lay_Draw);
         drawer.closeDrawer(GravityCompat.START);
         return true;
