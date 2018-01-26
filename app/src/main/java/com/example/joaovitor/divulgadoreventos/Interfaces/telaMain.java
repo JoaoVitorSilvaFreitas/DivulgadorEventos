@@ -3,7 +3,6 @@ package com.example.joaovitor.divulgadoreventos.Interfaces;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
@@ -72,7 +71,6 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
         startActivity(itlogin);
     }
 
-    public FloatingActionButton Fab_Map;
     private Toolbar tBar_Tool;
     private DrawerLayout Lay_Draw;
     private NavigationView Lay_NavView;
@@ -82,7 +80,6 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
     private ViewPager Vp_ViewPager;
     private TabLayout tab_Layout;
     private ImageView Img_Fotos;
-    private android.support.v4.app.FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,6 +155,7 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
                 RetornoLogin();
                 break;
         }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.Lay_Draw);
         drawer.closeDrawer(GravityCompat.START);
         return true;

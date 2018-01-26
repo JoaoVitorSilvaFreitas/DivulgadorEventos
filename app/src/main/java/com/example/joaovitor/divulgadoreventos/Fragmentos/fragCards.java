@@ -31,13 +31,14 @@ public class fragCards extends Fragment {
         Cview_c2l2 = (CardView)getActivity().findViewById(R.id.Cview_c2l2);
         Cview_c1l3 = (CardView)getActivity().findViewById(R.id.Cview_c1l3);
         Cview_c2l3 = (CardView)getActivity().findViewById(R.id.Cview_c2l3);
-        
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_cards_layout,container,false);
+
         setRetainInstance(true);
         return view;
     }

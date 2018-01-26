@@ -207,7 +207,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                app:srcCompat="@drawable/ic_search" />
+                app:srcCompat="@drawable/ic_confetti" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -248,7 +248,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                app:srcCompat="@drawable/ic_settings" />
+                app:srcCompat="@drawable/ic_preference" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -263,15 +263,4 @@
 
     </android.support.v7.widget.CardView>
 
-    <!-- <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8"
-        android:alignmentMode="alignMargins"
-        android:columnCount="2"
-        android:columnOrderPreserved="false"
-        android:padding="14dp"
-        android:rowCount="3">
-
-    </GridLayout> -->
 </android.support.constraint.ConstraintLayout>
