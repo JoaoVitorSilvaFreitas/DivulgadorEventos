@@ -98,7 +98,7 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
         Img_Fotos = (ImageView) findViewById(R.id.Img_Fotos);
 
         SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.pref_nomeExibicao), Context.MODE_PRIVATE);
-        String valorString = sharedPreferences.getString("valorString", "valor padrão");
+        String valorString = sharedPreferences.getString("key_nomeExibicao", "valor padrão");
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(getString(R.string.pref_nomeExibicao   ),"");
         editor.apply();
