@@ -8,10 +8,6 @@ import com.example.joaovitor.divulgadoreventos.Fragmentos.fragCards;
 import com.example.joaovitor.divulgadoreventos.Fragmentos.fragMaps;
 import com.example.joaovitor.divulgadoreventos.Fragmentos.pageFragment;
 
-/**
- * Created by joaovitor on 04/01/18.
- */
-
 public class AdaptadorSwipe extends FragmentPagerAdapter {
     //Cria a tabela para exibição dos nomes.
     private String tabTitles[] = new String[]{"Eventos", "Mapa"};

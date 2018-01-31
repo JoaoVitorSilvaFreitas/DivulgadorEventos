@@ -1,7 +1,9 @@
 package com.example.joaovitor.divulgadoreventos.Interfaces;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -95,6 +97,12 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
         tab_Layout = (TabLayout) findViewById(R.id.tab_Layout);
         Img_Fotos = (ImageView) findViewById(R.id.Img_Fotos);
 
+        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.pref_nomeExibicao), Context.MODE_PRIVATE);
+        String valorString = sharedPreferences.getString("valorString", "valor padrão");
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(getString(R.string.pref_nomeExibicao   ),"");
+        editor.apply();
+
         /*ViewPager do swipe adapter e o tablayout
         para fazer as telas interagirem através de slide */
         AdaptadorSwipe swipeAdapter = new AdaptadorSwipe(getSupportFragmentManager());
@@ -136,8 +144,6 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
         switch (item.getItemId()) {
             case R.id.nav_esportes:
                 EsportesIntent();

@@ -1,5 +1,6 @@
 package com.example.joaovitor.divulgadoreventos.Fragmentos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
@@ -7,9 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.joaovitor.divulgadoreventos.Interfaces.telaConfiguracoes;
 import com.example.joaovitor.divulgadoreventos.R;
 
 public class fragCards extends Fragment {
+
+    private void Configs() {
+        Intent itconfig = new Intent(getActivity(), telaConfiguracoes.class);
+        startActivity(itconfig);
+    }
 
     public fragCards(){
 
@@ -25,13 +32,6 @@ public class fragCards extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Cview_c1l1 = (CardView)getActivity().findViewById(R.id.Cview_c1l1);
-        Cview_c2l1 = (CardView)getActivity().findViewById(R.id.Cview_c2l1);
-        Cview_c1l2 = (CardView)getActivity().findViewById(R.id.Cview_c1l2);
-        Cview_c2l2 = (CardView)getActivity().findViewById(R.id.Cview_c2l2);
-        Cview_c1l3 = (CardView)getActivity().findViewById(R.id.Cview_c1l3);
-        Cview_c2l3 = (CardView)getActivity().findViewById(R.id.Cview_c2l3);
-
     }
 
     @Override
@@ -39,9 +39,22 @@ public class fragCards extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_cards_layout,container,false);
 
+        Cview_c1l1 = (CardView)view.findViewById(R.id.Cview_c1l1);
+        Cview_c2l1 = (CardView)view.findViewById(R.id.Cview_c2l1);
+        Cview_c1l2 = (CardView)view.findViewById(R.id.Cview_c1l2);
+        Cview_c2l2 = (CardView)view.findViewById(R.id.Cview_c2l2);
+        Cview_c1l3 = (CardView)view.findViewById(R.id.Cview_c1l3);
+        Cview_c2l3 = (CardView)view.findViewById(R.id.Cview_c2l3);
+
+        Cview_c2l3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Configs();
+            }
+        });
+
         setRetainInstance(true);
         return view;
     }
-
 
 }
