@@ -9,8 +9,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <!-- Permissões utilizadas para funcionar o autocomplete do e-mail na tela de login. -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -45,7 +43,12 @@
         </activity>
         <activity
             android:name=".Interfaces.telaLogin"
-            android:label="@string/title_activity_tela_login" />
+            android:label="@string/title_activity_tela_login"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity android:name=".Interfaces.telaCadastro"
+            android:windowSoftInputMode="stateHidden"
+            />
     </application>
 
 </manifest>

@@ -100,7 +100,7 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
         SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.pref_nomeExibicao), Context.MODE_PRIVATE);
         String valorString = sharedPreferences.getString("key_nomeExibicao", "valor padrão");
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(getString(R.string.pref_nomeExibicao   ),"");
+        editor.putString(getString(R.string.pref_nomeExibicao),"");
         editor.apply();
 
         /*ViewPager do swipe adapter e o tablayout
@@ -123,6 +123,7 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
             Lay_Draw.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+            RetornoLogin();
         }
     }
 

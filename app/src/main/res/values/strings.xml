@@ -1,12 +1,11 @@
 <resources>
     <string name="app_name">DivulgadorEventos</string>
 
+    <string name="Cdesc_Descricao">Content Description</string>
     <string name="nDraw_Open">Abrir navigation drawer</string>
     <string name="nDraw_Close">Fechar navigation drawer</string>
     <string name="title_activity_tela_mapa">Map</string>
     <string name="title_activity_maps">Map</string>
-
-    <string name="Nome_Pesquisa">Pesquisar</string>
     <string name="Nav_TipoEvento">Tipos de eventos</string>
     <string name="Nav_Culturais">Eventos Culturais</string>
     <string name="Nav_Esportes">Eventos Esportivos</string>
@@ -14,12 +13,12 @@
     <string name="Nav_Config">Configurações</string>
     <string name="Nav_Opcoes">Opções</string>
     <string name="Nav_Informacoes">Informações</string>
+    <string name="Nome_Pesquisa">Pesquisar</string>
     <string name="Nome_Configuracoes">Configurações</string>
     <string name="Nome_Alimenticios">Eventos Alimentícios</string>
     <string name="Nome_Busca">Buscar eventos</string>
     <string name="Nome_Musicais">Eventos Musicais</string>
     <string name="Nome_Gerais">Eventos Gerais</string>
-    <string name="Cdesc_Descricao">Content Description</string>
 
     <!-- Strings das configurações gerais -->
     <string name="pref_Gerais">Configurações gerais</string>
@@ -90,24 +89,33 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_login">Sign in</string>
 
-    <!-- Strings related to login -->
-    <string name="Nome_Email">Email</string>
-    <string name="Nome_Password">Digite a sua senha</string>
-    <string name="Nome_Login">Fazer login ou registrar</string>
+    <!-- Tela Login & cadastro -->
+
+    <string name="Btn_Login">Entrar</string>
+    <string name="Btn_Criar">Registrar</string>
+    <string name="Btn_Facebook">Acessar com o Facebook</string>
+    <string name="Msg_Password">Digite a sua senha</string>
+    <string name="Msg_Esqueceu">Esqueceu a senha?</string>
+    <string name="Msg_Criar">Criar uma nova conta</string>
+    <string name="Msg_Login">Faça login ou cadastre-se para ter acesso as suas
+        informações pessois</string>
+    <string name="Msg_Termos">Eu li e aceito os Termos de uso e também e Politica de privacidade
+        do aplicativo</string>
+    <string name="Msg_ou">OU</string>
+    <string name="Msg_SemLogin">Acessar sem fazer login</string>
+    <string name="Msg_Nome">Nome</string>
+    <string name="Msg_Sobrenome">Sobrenome</string>
+    <string name="Msg_Senha">Senha</string>
+    <string name="Txt_Email">Email</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
+    <string name="Erro_EmailInvalido">Este e-mail é invalido</string>
+    <string name="Erro_PasswordInvalido">Esta senha é muito curta</string>
+    <string name="Erro_PasswordIncorreto">Esta senha está incorreta</string>
+    <string name="Erro_CampoObrigatorio">Este campo é obrigatório</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
     <string name="title_activity_tela_login">Sign in</string>
-
-    <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
-
+    <string name="title_activity_tela_cadastro">telaCadastro</string>
 
 </resources>

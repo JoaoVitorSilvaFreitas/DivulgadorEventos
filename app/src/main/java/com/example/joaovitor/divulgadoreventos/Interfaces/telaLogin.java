@@ -3,22 +3,17 @@ package com.example.joaovitor.divulgadoreventos.Interfaces;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
-
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -35,28 +30,19 @@ import com.example.joaovitor.divulgadoreventos.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.Manifest.permission.READ_CONTACTS;
-
 public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
-    // id para fazer a checagem da permissão.
-    private static final int REQUEST_READ_CONTACTS = 0;
-
-    /*Array com credenciais de usuário para login e testes do aplicativo.
-     TODO: Remover este array quando o aplicativo for usar credenciais reais.
-     */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world","teste@example.com:teste"
-    };
-
-    private static final int[] DUMMY_PASSWORD = new int[]{
-            123456,123456,123456
-    };
+    // Interação com a activity.
+    private AutoCompleteTextView mEmailView;
+    private EditText mPasswordView;
+    private View mProgressView;
+    private View mLoginFormView;
+    private TextView Txt_SemLogin;
+    private TextView Txt_Criar;
 
     /*Acompanha a tarefa de login, para garantir que possa ser cancelada quando preciso.
     Por exemplo, caso o login/email estiver errado ou não estiverem sincronizados um com o outro
-     */
-
+    */
     private UserLoginTask mAuthTask = null;
 
     private void AbrirMain(){
@@ -65,11 +51,18 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
         finish();
     }
 
-    // Interação com a activity.
-    private AutoCompleteTextView mEmailView;
-    private EditText mPasswordView;
-    private View mProgressView;
-    private View mLoginFormView;
+    private void AbrirCadastro(){
+        Intent intent = new Intent(this,telaCadastro.class);
+        startActivity(intent);
+        finish();
+    }
+
+    /*Array com credenciais de usuário para login e testes do aplicativo.
+     TODO: Remover este array quando o aplicativo for usar credenciais reais.
+     */
+    private static final String[] DUMMY_CREDENTIALS = new String[]{
+            "foo@example.com:hello", "bar@example.com:world","teste@example.com:teste"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,8 +70,6 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
         setContentView(R.layout.activity_tela_login);
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
-        populateAutoComplete();
-
         mPasswordView = (EditText) findViewById(R.id.Txt_Pw);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -91,7 +82,7 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
             }
         });
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        Button mEmailSignInButton = (Button) findViewById(R.id.Btn_Login);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,53 +93,27 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
-    }
 
-    private void populateAutoComplete() {
-        if (!mayRequestContacts()) {
-            return;
-        }
+        Txt_SemLogin = (TextView) findViewById(R.id.Txt_SemLogin);
+        Txt_Criar = (TextView) findViewById(R.id.Txt_Criar);
 
-        getLoaderManager().initLoader(0, null, this);
-    }
-
-    //Fazer a checagem dos contatos do usuário.
-    private boolean mayRequestContacts() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            return true;
-        }
-        if (checkSelfPermission(READ_CONTACTS) == PackageManager.PERMISSION_GRANTED) {
-            return true;
-        }
-        if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
-            Snackbar.make(mEmailView, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE)
-                    .setAction(android.R.string.ok, new View.OnClickListener() {
-                        @Override
-                        @TargetApi(Build.VERSION_CODES.M)
-                        public void onClick(View v) {
-                            requestPermissions(new String[]{READ_CONTACTS}, REQUEST_READ_CONTACTS);
-                        }
-                    });
-        } else {
-            requestPermissions(new String[]{READ_CONTACTS}, REQUEST_READ_CONTACTS);
-        }
-        return false;
-    }
-
-    //Retorna que a permissão foi concedida e continua a execução.
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-        if (requestCode == REQUEST_READ_CONTACTS) {
-            if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                populateAutoComplete();
+        Txt_Criar.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AbrirCadastro();
             }
-        }
+        });
+
+        Txt_SemLogin.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AbrirMain();
+            }
+        });
+
     }
 
-
-    /*Faz a checagem da tentativa de login ou criação de senha.
-     */
+    //Faz a checagem da tentativa de login ou criação de senha.
     private void attemptLogin() {
         if (mAuthTask != null) {
             return;
@@ -167,18 +132,18 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
 
         // Verifica se a senha é válida ou inválida
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            mPasswordView.setError(getString(R.string.error_invalid_password));
+            mPasswordView.setError(getString(R.string.Erro_PasswordInvalido));
             focusView = mPasswordView;
             cancel = true;
         }
 
         // Verifica se o e-mail é valido.
         if (TextUtils.isEmpty(email)) {
-            mEmailView.setError(getString(R.string.error_field_required));
+            mEmailView.setError(getString(R.string.Erro_CampoObrigatorio));
             focusView = mEmailView;
             cancel = true;
         } else if (!isEmailValid(email)) {
-            mEmailView.setError(getString(R.string.error_invalid_email));
+            mEmailView.setError(getString(R.string.Erro_EmailInvalido));
             focusView = mEmailView;
             cancel = true;
         }
@@ -208,12 +173,10 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
 
-
         return password.length() > 4;
     }
 
-    /* Mostra a barra de progresso e esconde a tela de login.
-     */
+    // Mostra a barra de progresso e esconde a tela de login.
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
@@ -249,7 +212,8 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
 
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
-        return new CursorLoader(this,
+
+         return new CursorLoader(this,
                 // Retrieve data rows for the device user's 'profile' contact.
                 Uri.withAppendedPath(ContactsContract.Profile.CONTENT_URI,
                         ContactsContract.Contacts.Data.CONTENT_DIRECTORY), ProfileQuery.PROJECTION,
@@ -268,6 +232,7 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
         List<String> emails = new ArrayList<>();
         cursor.moveToFirst();
+
         while (!cursor.isAfterLast()) {
             emails.add(cursor.getString(ProfileQuery.ADDRESS));
             cursor.moveToNext();
@@ -291,7 +256,6 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
         mEmailView.setAdapter(adapter);
     }
 
-
     private interface ProfileQuery {
         String[] PROJECTION = {
                 ContactsContract.CommonDataKinds.Email.ADDRESS,
@@ -301,7 +265,6 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
         int ADDRESS = 0;
         int IS_PRIMARY = 1;
     }
-
 
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
@@ -334,8 +297,6 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
                 }
 
             }
-
-            // TODO: Registrar a nova conta aqui.
             return true;
         }
 
@@ -347,7 +308,7 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
             if (success) {
                 finish();
             } else {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
+                mPasswordView.setError(getString(R.string.Erro_PasswordIncorreto));
                 mPasswordView.requestFocus();
             }
         }

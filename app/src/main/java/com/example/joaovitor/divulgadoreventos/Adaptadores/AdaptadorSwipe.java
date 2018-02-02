@@ -18,14 +18,13 @@ public class AdaptadorSwipe extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-
         Fragment fragment = new pageFragment();
-
         //Cria o fragmento do fragMaps
         Fragment fragMap = new fragMaps();
         //Cria o fragmento do CardView
         Fragment fragCard = new fragCards();
 
+        // Retorna um fragmento para cada posição do pageFragment.
         switch (position) {
             case 0:
                 return fragCard;

@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Default Color -->
-
     <color name="CorPrimariaEscura1">#303F9F</color>
     <color name="CorPrimaria1">#3F51B5</color>
     <color name="AtenuacaoDeCor1">#FF4081</color>
 
     <!-- Cor verde -->
-
     <color name="CorPrimariaEscura2">#689f38</color>
     <color name="CorPrimaria2">#8bc34a</color>
     <color name="AtenuacaoDeCor2">#4caf50</color>
@@ -16,4 +14,9 @@
     <color name="CorPrimariaEscura3">#263238</color>
     <color name="CorPrimaria3">#37474F</color>
     <color name="AtenuacaoDeCor3">#455A64</color>
+
+    <!-- Cor soft -->
+    <color name="CorPrimariaEscura4">#8aacc8</color>
+    <color name="CorPrimaria4">#bbdefb</color>
+    <color name="AtenuacaoDeCor4">#eeffff</color>
 </resources>
