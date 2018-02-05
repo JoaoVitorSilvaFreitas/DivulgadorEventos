@@ -77,9 +77,23 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="@string/Msg_Senha"
+            android:imeOptions="actionUnspecified"
+            android:inputType="textPassword"
             android:maxLines="1"
             android:singleLine="true" />
     </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/Btn_Termos"
+        style="?android:textAppearanceSmall"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:text="termos"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
     <CheckBox
         android:id="@+id/Cbox_Termos"
