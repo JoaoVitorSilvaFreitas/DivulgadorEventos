@@ -31,7 +31,8 @@
             android:label="@string/title_activity_tela_maps" />
         <activity
             android:name=".Interfaces.telaConfiguracoes"
-            android:label="@string/title_activity_tela_configuracoes" />
+            android:label="@string/title_activity_tela_configuracoes"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Interfaces.telaSplash"
             android:theme="@style/AppCompat.TelaCheia">
@@ -41,13 +42,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--tela de login, sem action bar -->
         <activity
             android:name=".Interfaces.telaLogin"
             android:label="@string/title_activity_tela_login"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden"
+            android:theme="@style/AppTheme.NoActionBar" />
 
+        <!--tela de cadastro, sem action bar -->
         <activity android:name=".Interfaces.telaCadastro"
             android:windowSoftInputMode="stateHidden"
+            android:theme="@style/AppTheme.NoActionBar"
             />
     </application>
 

@@ -1,15 +1,14 @@
 package com.example.joaovitor.divulgadoreventos.Interfaces;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.joaovitor.divulgadoreventos.Fragmentos.fragTermos;
 import com.example.joaovitor.divulgadoreventos.R;
 
 public class telaCadastro extends AppCompatActivity {
@@ -20,9 +19,12 @@ public class telaCadastro extends AppCompatActivity {
     private EditText Txt_Sobrenome;
     private EditText Txt_Email;
     private EditText Txt_Senha;
-    private Button Btn_FacebookCadastro;
     private Button Btn_Cadastro;
     private Button Btn_Termos;
+    private TextInputLayout Til_Nome;
+    private TextInputLayout Til_Sobrenome;
+    private TextInputLayout Til_EmailCadastro;
+    private TextInputLayout Til_SenhaCadastro;
 
 
     public void abrirLogin() {
@@ -31,11 +33,13 @@ public class telaCadastro extends AppCompatActivity {
         finish();
     }
 
-    public void abrirTermos(){
-        Fragment frag = new fragTermos();
+    // verifica se o e-mail é valido, se ele conter o "@".
+    private boolean VerificaEmail(String email) {
+        return email.contains("@example.com");
     }
 
-    public void checagemCadastro(){
+    // Checar e setar os erros do cadastro.
+    public void checagemCadastro() {
 
 
         String nome = Txt_Nome.getText().toString();
@@ -43,33 +47,43 @@ public class telaCadastro extends AppCompatActivity {
         String email = Txt_Email.getText().toString();
         String senha = Txt_Senha.getText().toString();
 
-        Txt_Nome.setError(null);
-        Txt_Sobrenome.setError(null);
-        Txt_Email.setError(null);
-        Txt_Senha.setError(null);
+        //Setando os Til's para as mensagens de erro
+        Til_Nome.setError(null);
+        Til_Sobrenome.setError(null);
+        Til_EmailCadastro.setError(null);
+        Til_SenhaCadastro.setError(null);
 
-        if (TextUtils.isEmpty(nome)){
-            Txt_Nome.setError(getString(R.string.Erro_CampoObrigatorio));
-            focusView = Txt_Nome;
+        if (TextUtils.isEmpty(nome)) {
+            Til_Nome.setError(getString(R.string.Erro_CampoVazio));
+            focusView = Til_Nome;
         }
 
-        if (TextUtils.isEmpty(sobrenome)){
-            Txt_Sobrenome.setError(getString(R.string.Erro_CampoObrigatorio));
-            focusView = Txt_Sobrenome;
+        if (TextUtils.isEmpty(sobrenome)) {
+            Til_Sobrenome.setError(getString(R.string.Erro_CampoVazio));
+            focusView = Til_Sobrenome;
         }
 
-        if (TextUtils.isEmpty(email)){
-            Txt_Email.setError(getString(R.string.Erro_CampoObrigatorio));
-            focusView = Txt_Email;
-        }
-
-        if (TextUtils.isEmpty(senha)){
-            Txt_Senha.setError(getString(R.string.Erro_CampoObrigatorio));
-            focusView = Txt_Senha;
+        // Erro de E-mail vazio.
+        if (TextUtils.isEmpty(email)) {
+            Til_EmailCadastro.setError(getString(R.string.Erro_CampoObrigatorio));
+            focusView = Til_EmailCadastro;
             cancel = true;
-        }else if(senha.length() < 5){
-            Txt_Senha.setError(getString(R.string.Erro_PasswordInvalido));
-            focusView = Txt_Senha;
+        // Erro de e-mail invalido.
+        } else if (!VerificaEmail(email)) {
+            Til_EmailCadastro.setError(getString(R.string.Erro_EmailInvalido));
+            focusView = Til_EmailCadastro;
+            cancel = true;
+        }
+
+        //Erro de senha vázia.
+        if (TextUtils.isEmpty(senha)) {
+            Til_SenhaCadastro.setError(getString(R.string.Erro_CampoObrigatorio));
+            focusView = Til_SenhaCadastro;
+            cancel = true;
+        //Erro de senha muito curta.
+        } else if (senha.length() < 5) {
+            Til_SenhaCadastro.setError(getString(R.string.Erro_PasswordInvalido));
+            focusView = Til_SenhaCadastro;
             cancel = true;
         }
     }
@@ -83,9 +97,11 @@ public class telaCadastro extends AppCompatActivity {
         Txt_Sobrenome = (EditText) findViewById(R.id.Txt_Sobrenome);
         Txt_Email = (EditText) findViewById(R.id.Txt_Email);
         Txt_Senha = (EditText) findViewById(R.id.Txt_Senha);
-        Btn_FacebookCadastro = (Button) findViewById(R.id.Btn_FacebookCadastro);
         Btn_Cadastro = (Button) findViewById(R.id.Btn_Cadastro);
-        Btn_Termos = (Button) findViewById(R.id.Btn_Termos);
+        Til_Nome = (TextInputLayout) findViewById(R.id.Til_Nome);
+        Til_Sobrenome = (TextInputLayout) findViewById(R.id.Til_Sobrenome);
+        Til_EmailCadastro = (TextInputLayout) findViewById(R.id.Til_EmailCadastro);
+        Til_SenhaCadastro = (TextInputLayout) findViewById(R.id.Til_SenhaCadastro);
 
         Btn_Cadastro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,14 +109,8 @@ public class telaCadastro extends AppCompatActivity {
                 checagemCadastro();
             }
         });
-
-        Btn_Termos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                abrirTermos();
-            }
-        });
     }
+
 
     @Override
     public void onBackPressed() {

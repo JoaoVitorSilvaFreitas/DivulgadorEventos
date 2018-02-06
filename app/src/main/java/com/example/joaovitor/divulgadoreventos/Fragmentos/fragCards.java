@@ -1,6 +1,8 @@
 package com.example.joaovitor.divulgadoreventos.Fragmentos;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
@@ -56,5 +58,16 @@ public class fragCards extends Fragment {
         setRetainInstance(true);
         return view;
     }
+
+    public boolean onIsMultiPane() {
+        return isXLargeTablet(getContext());
+    }
+
+    private static boolean isXLargeTablet(Context context) {
+        return (context.getResources().getConfiguration().screenLayout
+                & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_XLARGE;
+    }
+
+
 
 }

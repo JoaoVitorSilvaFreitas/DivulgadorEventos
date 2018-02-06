@@ -15,8 +15,5 @@
     <color name="CorPrimaria3">#37474F</color>
     <color name="AtenuacaoDeCor3">#455A64</color>
 
-    <!-- Cor soft -->
-    <color name="CorPrimariaEscura4">#8aacc8</color>
-    <color name="CorPrimaria4">#bbdefb</color>
-    <color name="AtenuacaoDeCor4">#eeffff</color>
+    <color name="CorBranca">#ffffff</color>
 </resources>

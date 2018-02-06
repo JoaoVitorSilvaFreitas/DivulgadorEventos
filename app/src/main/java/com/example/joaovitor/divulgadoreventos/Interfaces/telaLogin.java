@@ -13,6 +13,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -39,6 +40,8 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
     private View mLoginFormView;
     private TextView Txt_SemLogin;
     private TextView Txt_Criar;
+    private TextInputLayout Til_EmailLogin;
+    private TextInputLayout Til_SenhaLogin;
 
     /*Acompanha a tarefa de login, para garantir que possa ser cancelada quando preciso.
     Por exemplo, caso o login/email estiver errado ou não estiverem sincronizados um com o outro
@@ -71,6 +74,8 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         mPasswordView = (EditText) findViewById(R.id.Txt_Pw);
+        Til_EmailLogin = (TextInputLayout) findViewById(R.id.Til_EmailLogin);
+        Til_SenhaLogin = (TextInputLayout) findViewById(R.id.Til_SenhaLogin);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -120,8 +125,8 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
         }
 
         // Reset errors.
-        mEmailView.setError(null);
-        mPasswordView.setError(null);
+        Til_EmailLogin.setError(null);
+        Til_SenhaLogin.setError(null);
 
         // Store values at the time of the login attempt.
         String email = mEmailView.getText().toString();
@@ -131,20 +136,20 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
         View focusView = null;
 
         // Verifica se a senha é válida ou inválida
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            mPasswordView.setError(getString(R.string.Erro_PasswordInvalido));
-            focusView = mPasswordView;
+        if (TextUtils.isEmpty(password) && isPasswordValid(password)) {
+            Til_SenhaLogin.setError(getString(R.string.Erro_PasswordInvalido));
+            focusView = Til_SenhaLogin;
             cancel = true;
         }
 
         // Verifica se o e-mail é valido.
         if (TextUtils.isEmpty(email)) {
-            mEmailView.setError(getString(R.string.Erro_CampoObrigatorio));
-            focusView = mEmailView;
+            Til_EmailLogin.setError(getString(R.string.Erro_CampoObrigatorio));
+            focusView = Til_EmailLogin;
             cancel = true;
         } else if (!isEmailValid(email)) {
-            mEmailView.setError(getString(R.string.Erro_EmailInvalido));
-            focusView = mEmailView;
+            Til_EmailLogin.setError(getString(R.string.Erro_EmailInvalido));
+            focusView = Til_EmailLogin;
             cancel = true;
         }
 
@@ -173,7 +178,7 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
 
-        return password.length() > 4;
+        return password.length() > 5;
     }
 
     // Mostra a barra de progresso e esconde a tela de login.

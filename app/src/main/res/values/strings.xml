@@ -98,8 +98,6 @@
     <string name="Msg_Password">Digite a sua senha</string>
     <string name="Msg_Esqueceu">Esqueceu a senha?</string>
     <string name="Msg_Criar">Criar uma nova conta</string>
-    <string name="Msg_Login">Faça login ou cadastre-se para ter acesso as suas
-        informações pessois</string>
     <string name="Msg_Termos">Eu li e aceito os Termos de uso e também e Politica de privacidade
         do aplicativo</string>
     <string name="Msg_ou">OU</string>
@@ -110,6 +108,7 @@
     <string name="Txt_Email">Email</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="Erro_EmailInvalido">Este e-mail é invalido</string>
+    <string name="Erro_CampoVazio">Favor preencher este campo</string>
     <string name="Erro_PasswordInvalido">Esta senha é muito curta</string>
     <string name="Erro_PasswordIncorreto">Esta senha está incorreta</string>
     <string name="Erro_CampoObrigatorio">Este campo é obrigatório</string>
