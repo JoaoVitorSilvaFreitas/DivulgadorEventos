@@ -2,8 +2,9 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#37474F"/>
-            <!--Define o tamanho das bordas-->
+            <size android:height="72dp" android:width="250dp"/>
+            <gradient android:angle="270"
+                android:endColor="#E2E2E2" android:centerColor="@color/CorLogoMedia" android:startColor="@color/CorLogoForte" />
             <corners android:radius="4dp" />
         </shape>
     </item>

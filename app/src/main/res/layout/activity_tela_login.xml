@@ -34,7 +34,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/ic_origami" />
+                app:srcCompat="@drawable/ic_origami" android:contentDescription="TODO"/>
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/Til_EmailLogin"
@@ -98,7 +98,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="60dp"
                     android:padding="5dp"
                     android:text="@string/Msg_Esqueceu"
                     android:textAlignment="center"

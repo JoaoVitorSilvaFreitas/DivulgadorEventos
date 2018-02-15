@@ -16,4 +16,8 @@
     <color name="AtenuacaoDeCor3">#455A64</color>
 
     <color name="CorBranca">#ffffff</color>
+    <color name="CorLogoForte">#598BC8</color>
+    <color name="CorLogoMedia">#649CE2</color>
+    <color name="CorLogoFraca">#7EBCEF</color>
+    <color name="CorLogoMuitoFraca">#8BCAFC</color>
 </resources>
