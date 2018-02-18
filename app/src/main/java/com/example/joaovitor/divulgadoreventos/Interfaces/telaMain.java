@@ -22,24 +22,9 @@ import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.joaovitor.divulgadoreventos.Adaptadores.AdaptadorSwipe;
-import com.example.joaovitor.divulgadoreventos.Fragmentos.telaMaps;
 import com.example.joaovitor.divulgadoreventos.R;
 
 public class telaMain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-
-    //intent para abrir a posiçao do sesi
-    public void CulturaisIntent() {
-        Intent itsesi = new Intent(this, telaMaps.class);
-        itsesi.putExtra("Cultura", 2);
-        startActivity(itsesi);
-    }
-
-    //intent para abrir a posição do sesc
-    public void EsportesIntent() {
-        Intent itsesc = new Intent(this, telaMaps.class);
-        itsesc.putExtra("Esportes", 1);
-        startActivity(itsesc);
-    }
 
     //Função para mostrar as mensagens
     private void InformacoesAlert() {
@@ -146,12 +131,6 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.nav_esportes:
-                EsportesIntent();
-                break;
-            case R.id.nav_culturais:
-                CulturaisIntent();
-                break;
             case R.id.nav_config:
                 Configs();
                 break;

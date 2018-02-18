@@ -43,8 +43,6 @@ public class fragMaps extends Fragment implements OnMapReadyCallback {
     private LatLng TenisClube = new LatLng(-23.193209, -45.892946);
     private LatLng Pavilhao = new LatLng(-23.228609, -45.899420);
     private LatLng PoliCpo = new LatLng(-23.270406, -45.903192);
-
-
     /* Função responsável para verificar a permissão, caso não esteja ativa ele requisita a
      autorização do usuário */
     private void VerificaPermissao() {
@@ -222,7 +220,7 @@ public class fragMaps extends Fragment implements OnMapReadyCallback {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState){
-        view = inflater.inflate(R.layout.activity_tela_maps,container,false);
+        view = inflater.inflate(R.layout.frag_maps_layout,container,false);
         //método para não Recriar o fragment toda vez que o usuário virar a tela
         setRetainInstance(true);
         return view;

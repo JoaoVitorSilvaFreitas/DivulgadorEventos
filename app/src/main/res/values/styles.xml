@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/CorPrimaria3</item>
         <item name="colorPrimaryDark">@color/CorPrimariaEscura3</item>
         <item name="colorAccent">@color/AtenuacaoDeCor3</item>
+        <!-- Cor do TextInputLayout -->
+        <item name="colorControlActivated">@color/CorLogoForte</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

@@ -27,9 +27,6 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".Fragmentos.telaMaps"
-            android:label="@string/title_activity_tela_maps" />
-        <activity
             android:name=".Interfaces.telaConfiguracoes"
             android:label="@string/title_activity_tela_configuracoes"
             android:theme="@style/AppTheme.NoActionBar" />
