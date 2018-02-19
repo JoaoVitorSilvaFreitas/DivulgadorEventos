@@ -28,8 +28,7 @@
 
         <activity
             android:name=".Interfaces.telaConfiguracoes"
-            android:label="@string/title_activity_tela_configuracoes"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_tela_configuracoes" />
         <activity
             android:name=".Interfaces.telaSplash"
             android:theme="@style/AppCompat.TelaCheia">

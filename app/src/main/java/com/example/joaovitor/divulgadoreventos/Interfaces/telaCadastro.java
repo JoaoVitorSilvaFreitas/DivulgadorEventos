@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.example.joaovitor.divulgadoreventos.R;
 
@@ -25,6 +26,7 @@ public class telaCadastro extends AppCompatActivity {
     private TextInputLayout Til_Sobrenome;
     private TextInputLayout Til_EmailCadastro;
     private TextInputLayout Til_SenhaCadastro;
+    private ImageView Img_Retorno;
 
 
     public void abrirLogin() {
@@ -68,7 +70,7 @@ public class telaCadastro extends AppCompatActivity {
             Til_EmailCadastro.setError(getString(R.string.Erro_CampoObrigatorio));
             focusView = Til_EmailCadastro;
             cancel = true;
-        // Erro de e-mail invalido.
+            // Erro de e-mail invalido.
         } else if (!VerificaEmail(email)) {
             Til_EmailCadastro.setError(getString(R.string.Erro_EmailInvalido));
             focusView = Til_EmailCadastro;
@@ -80,7 +82,7 @@ public class telaCadastro extends AppCompatActivity {
             Til_SenhaCadastro.setError(getString(R.string.Erro_CampoObrigatorio));
             focusView = Til_SenhaCadastro;
             cancel = true;
-        //Erro de senha muito curta.
+            //Erro de senha muito curta.
         } else if (senha.length() < 5) {
             Til_SenhaCadastro.setError(getString(R.string.Erro_PasswordInvalido));
             focusView = Til_SenhaCadastro;
@@ -102,6 +104,15 @@ public class telaCadastro extends AppCompatActivity {
         Til_Sobrenome = (TextInputLayout) findViewById(R.id.Til_Sobrenome);
         Til_EmailCadastro = (TextInputLayout) findViewById(R.id.Til_EmailCadastro);
         Til_SenhaCadastro = (TextInputLayout) findViewById(R.id.Til_SenhaCadastro);
+        Img_Retorno = (ImageView) findViewById(R.id.Img_Retorno);
+
+        Img_Retorno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirLogin();
+            }
+        });
+
 
         Btn_Cadastro.setOnClickListener(new View.OnClickListener() {
             @Override

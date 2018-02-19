@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Cores do tema -->
-        <item name="colorPrimary">@color/CorPrimaria3</item>
-        <item name="colorPrimaryDark">@color/CorPrimariaEscura3</item>
-        <item name="colorAccent">@color/AtenuacaoDeCor3</item>
+        <item name="colorPrimary">@color/CorLogoMedia</item>
+        <item name="colorPrimaryDark">@color/CorLogoForte</item>
+        <item name="colorAccent">@color/CorLogoFraca</item>
         <!-- Cor do TextInputLayout -->
         <item name="colorControlActivated">@color/CorLogoForte</item>
     </style>
