@@ -20,6 +20,7 @@
         <activity
             android:name=".Interfaces.telaMain"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <!-- Key api do Google Maps, necessário para acessar o map. -->
         <meta-data

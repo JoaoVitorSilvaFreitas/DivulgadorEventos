@@ -67,6 +67,8 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
     private ViewPager Vp_ViewPager;
     private TabLayout tab_Layout;
     private ImageView Img_Fotos;
+    private MenuItem CampoDeBusca;
+    private SearchView sView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,8 +119,8 @@ public class telaMain extends AppCompatActivity implements NavigationView.OnNavi
         // Infla o menu da toolbar
         getMenuInflater().inflate(R.menu.tela_main, menu);
         // Cria um item do menu
-        MenuItem CampoDeBusca = menu.findItem(R.id.buscar_CampoDeBusca);
-        SearchView sView = (SearchView) MenuItemCompat.getActionView(CampoDeBusca);
+        CampoDeBusca = menu.findItem(R.id.buscar_CampoDeBusca);
+        sView = (SearchView) MenuItemCompat.getActionView(CampoDeBusca);
         return true;
     }
 

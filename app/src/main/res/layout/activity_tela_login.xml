@@ -34,7 +34,6 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:contentDescription="TODO"
                 app:srcCompat="@drawable/ic_origami"/>
 
             <android.support.design.widget.TextInputLayout
@@ -80,7 +79,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="15dp">
 
                 <TextView
                     android:id="@+id/Txt_Criar"

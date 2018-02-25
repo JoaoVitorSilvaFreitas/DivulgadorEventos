@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.example.joaovitor.divulgadoreventos.Fragmentos.fragButtons;
 import com.example.joaovitor.divulgadoreventos.Fragmentos.fragCards;
 import com.example.joaovitor.divulgadoreventos.Fragmentos.fragMaps;
 import com.example.joaovitor.divulgadoreventos.Fragmentos.pageFragment;
@@ -18,16 +19,19 @@ public class AdaptadorSwipe extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
+
         Fragment fragment = new pageFragment();
         //Cria o fragmento do fragMaps
         Fragment fragMap = new fragMaps();
         //Cria o fragmento do CardView
         Fragment fragCard = new fragCards();
+        //Cria o fragmento dos Buttons
+        Fragment fragButton = new fragButtons();
 
         // Retorna um fragmento para cada posição do pageFragment.
         switch (position) {
             case 0:
-                return fragCard;
+                return fragButton;
             case 1:
                 return fragMap;
             default:

@@ -28,7 +28,7 @@
                 android:id="@id/Img_Logo"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="125dp"
+                android:layout_marginLeft="115dp"
                 app:srcCompat="@drawable/ic_origami" />
 
         </LinearLayout>
