@@ -24,6 +24,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.joaovitor.divulgadoreventos.R;
@@ -42,6 +43,8 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
     private TextView Txt_Criar;
     private TextInputLayout Til_EmailLogin;
     private TextInputLayout Til_SenhaLogin;
+    private ImageView Img_Facebook;
+    private ImageView Img_Googleplus;
 
     /*Acompanha a tarefa de login, para garantir que possa ser cancelada quando preciso.
     Por exemplo, caso o login/email estiver errado ou não estiverem sincronizados um com o outro
@@ -72,7 +75,7 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_login);
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
+        mEmailView = (AutoCompleteTextView) findViewById(R.id.Txt_EmailLogin);
         mPasswordView = (EditText) findViewById(R.id.Txt_Pw);
         Til_EmailLogin = (TextInputLayout) findViewById(R.id.Til_EmailLogin);
         Til_SenhaLogin = (TextInputLayout) findViewById(R.id.Til_SenhaLogin);
@@ -101,11 +104,27 @@ public class telaLogin extends AppCompatActivity implements LoaderCallbacks<Curs
 
         Txt_SemLogin = (TextView) findViewById(R.id.Txt_SemLogin);
         Txt_Criar = (TextView) findViewById(R.id.Txt_Criar);
+        Img_Facebook = (ImageView) findViewById(R.id.Img_Facebook);
+        Img_Googleplus = (ImageView) findViewById(R.id.Img_Googleplus);
 
         Txt_Criar.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 AbrirCadastro();
+            }
+        });
+
+        Img_Facebook.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        Img_Googleplus.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 

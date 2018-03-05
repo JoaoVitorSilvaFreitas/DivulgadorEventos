@@ -36,7 +36,7 @@
         app:layout_constraintBottom_toTopOf="@+id/Img_Configs"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Img_Esportes"
-        app:layout_constraintVertical_bias="0.649"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_music" />
 
     <ImageView
@@ -49,7 +49,7 @@
         app:layout_constraintBottom_toTopOf="@+id/Img_Gerais"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Img_Cultura"
-        app:layout_constraintVertical_bias="0.649"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_chicken_1" />
 
     <ImageView

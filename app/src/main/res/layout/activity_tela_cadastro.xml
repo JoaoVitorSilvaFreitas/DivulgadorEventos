@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="12dp"
+    android:layout_margin="16dp"
     android:focusableInTouchMode="true"
     tools:context="com.example.joaovitor.divulgadoreventos.Interfaces.telaCadastro">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
@@ -22,17 +22,16 @@
                 android:id="@+id/Img_Retorno"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/layout_botao_retorno"/>
+                android:background="@drawable/layout_botao_retorno" />
 
             <ImageView
                 android:id="@id/Img_Logo"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="115dp"
+                android:layout_marginLeft="125dp"
                 app:srcCompat="@drawable/ic_origami" />
 
         </LinearLayout>
-
 
 
         <Button
@@ -91,7 +90,7 @@
             app:errorEnabled="true">
 
             <android.support.design.widget.TextInputEditText
-                android:id="@+id/Txt_Email"
+                android:id="@+id/Txt_EmailCadastro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -130,16 +129,39 @@
         <Button
             android:id="@+id/Btn_Cadastro"
             style="?android:textAppearanceSmall"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/layout_botao_corner4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/layout_botao_corner4dpsolid"
             android:padding="10dp"
             android:text="@string/Btn_Criar"
             android:textAllCaps="false"
             android:textColor="@color/CorBranca"
             android:textSize="14sp"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Btn_Teste"
+            style="?android:textAppearanceSmall"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/layout_botao_corner4dpsolid"
+            android:padding="10dp"
+            android:text="teste"
+            android:textAllCaps="false"
+            android:textColor="@color/CorBranca"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/Lst_ListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </LinearLayout>
 </ScrollView>

@@ -1,6 +1,6 @@
 package com.example.joaovitor.divulgadoreventos.Fragmentos;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import com.example.joaovitor.divulgadoreventos.Interfaces.telaConfiguracoes;
 import com.example.joaovitor.divulgadoreventos.R;
 
-public class fragButtons extends android.support.v4.app.Fragment{
+public class fragButtons extends Fragment{
 
     private void Configs() {
         Intent itconfig = new Intent(getActivity(), telaConfiguracoes.class);
