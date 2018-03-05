@@ -9,14 +9,16 @@ public class Usuario {
     String Senha;
 
 
-    public Usuario(String nome, String email, String s, String senha){
+    public Usuario(String nome,String Sobrenome, String email, String senha){
 
     }
 
-    public int Usuario(int codigo, String nome, String email) {
+    public int Usuario(int codigo, String nome,String sobrenome, String email,String senha) {
         this.Codigo = codigo;
         this.Nome = nome;
+        this.Sobrenome = sobrenome;
         this.Email = email;
+        this.Senha = senha;
 
         return Codigo;
     }
