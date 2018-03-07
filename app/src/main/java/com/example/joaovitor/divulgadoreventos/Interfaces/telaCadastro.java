@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -30,6 +31,7 @@ public class telaCadastro extends AppCompatActivity {
     private TextInputLayout Til_Sobrenome;
     private TextInputLayout Til_EmailCadastro;
     private TextInputLayout Til_SenhaCadastro;
+    private CheckBox Cbox_Termos;
     private ImageView Img_Retorno;
     private ListView Lst_ListView;
 
@@ -37,6 +39,12 @@ public class telaCadastro extends AppCompatActivity {
 
     public void abrirLogin() {
         Intent intent = new Intent(this, telaLogin.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void abrirMain(){
+        Intent intent = new Intent(this,telaMain.class);
         startActivity(intent);
         finish();
     }
@@ -113,6 +121,8 @@ public class telaCadastro extends AppCompatActivity {
         Til_SenhaCadastro = (TextInputLayout) findViewById(R.id.Til_SenhaCadastro);
         Img_Retorno = (ImageView) findViewById(R.id.Img_Retorno);
         Lst_ListView = (ListView) findViewById(R.id.Lst_ListView);
+        Cbox_Termos = (CheckBox) findViewById(R.id.Cbox_Termos);
+
 
         Img_Retorno.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,9 +146,14 @@ public class telaCadastro extends AppCompatActivity {
                 String email = Txt_Email.getText().toString();
                 String senha = Txt_Senha.getText().toString();
 
-                bd.addUsuario(new Usuario(nome,sobrenome,email,senha));
+                if (Cbox_Termos.isChecked()) {
+                    bd.addUsuario(new Usuario(nome, sobrenome, email, senha));
+                    Toast.makeText(telaCadastro.this, "Salvo com sucesso", Toast.LENGTH_LONG).show();
+                    abrirMain();
+                } else {
+                    Toast.makeText(telaCadastro.this, "Favor checar os termos", Toast.LENGTH_LONG).show();
+                }
 
-                Toast.makeText(telaCadastro.this, "Salvo com sucesso",Toast.LENGTH_LONG).show();
             }
         });
 
